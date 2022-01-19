@@ -1,0 +1,25 @@
+# print(type(lista))
+# print(lista[1:])
+# print(lista[1:3])
+# print(lista[1:6])
+# print(lista[1:6])
+# print(lista[0:5:2])
+# print(lista[-1:-6:-2])
+# lista.append('mere')
+# lista[3]='mere'
+# print(len(lista))
+# print(lista.index(2))
+# print(lista.index(-5))
+# lista = [5,2,-5,"string",2.7]
+# lista.insert(3, 'element nou')
+# lista.remove(-5)
+# lista.pop(2)
+# lista.clear()#sterge tot din lista
+# lista.reverse()
+# lista.pop(3)
+# lista.sort()
+# print(ord('8'),8)
+# print(ord('8'),8)
+# lista_stringuri = ['8','2','21']
+# lista_stringuri.sort()
+# print(lista_stringuri)
