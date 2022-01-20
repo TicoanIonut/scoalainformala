@@ -11,7 +11,9 @@
 # print(lista.index(2))
 # print(lista.index(-5))
 # lista = [5,2,-5,"string",2.7]
-# lista.insert(3, 'element nou')
+# lista.sort()
+# lista.insert(9, 'element nou')
+# print(lista)
 # lista.remove(-5)
 # lista.pop(2)
 # lista.clear()#sterge tot din lista
@@ -20,6 +22,6 @@
 # lista.sort()
 # print(ord('8'),8)
 # print(ord('8'),8)
-# lista_stringuri = ['8','2','21']
-# lista_stringuri.sort()
-# print(lista_stringuri)
+lista_stringuri = ['8','2','21']
+lista_stringuri.sort()
+print(lista_stringuri)
