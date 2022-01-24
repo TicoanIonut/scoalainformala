@@ -17,9 +17,9 @@ mylist.sort()
 print(mylist)
 del mylist[0::3]                                 #multilpi ai nr 3 daca se cunoaste lista, folosind slicing
 del mylist[0::2]
-print('multipli ai numarului 3',mylist)           #multipli ai numarului 3
+print('multipli ai numarului 3',mylist)           
 
 
-mylist = [elem for elem in mylist if elem % 3== 0]
+mylist = [elem for elem in mylist if elem % 3== 0]        #multipli ai numarului 3
 print(mylist)
 
