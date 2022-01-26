@@ -1,12 +1,12 @@
-def func(x):
-    if x==int(input()):
-        print(x)
-    elif x==float(input()):
-        print(x)
-    elif x!=int(input()):
-        print(0)
-    else:
-        x != float(input())
-        print(0)
-
-(func(1))
+# def func(x):
+x=input()
+if x==int():
+    print(x)
+elif x==float():
+    print(x)
+elif x!=int():
+    print(0)
+elif x!=float():
+    print(0)
+print(x)
+# (func(1))
