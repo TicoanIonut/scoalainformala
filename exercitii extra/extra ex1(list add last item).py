@@ -5,6 +5,3 @@ print (list)
 
 list.insert (len (list), 10)
 print (list)
-
-list.append(11)
-print (list)
