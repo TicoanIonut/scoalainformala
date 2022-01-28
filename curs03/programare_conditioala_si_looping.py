@@ -27,8 +27,8 @@
 # for variabila_temporara in range(1,len(lista)+1):
 #     print(variabila_temporara)
 # print(variabila_temporara,'>>')
-dictionar= {1:'unu',2:'doi',3:'trei'}
+# dictionar= {1:'unu',2:'doi',3:'trei'}
 # for item,value in dictionar.items():
 #     print(item,value)
-for item in dictionar.keys():
-    print(item,dictionar.get(item))
+# for item in dictionar.keys():
+#     print(item,dictionar.get(item))

@@ -14,7 +14,8 @@ mylist.sort()
 print('numere impare',mylist[0::2])               #numere impare
 
 mylist.sort()
-print(mylist)
+print('multipli ai numaruui 3',mylist[2::3])
+# print(mylist)
 del mylist[0::3]                                 #multilpi ai nr 3 daca se cunoaste lista, folosind slicing
 del mylist[0::2]
 print('multipli ai numarului 3',mylist)           #multipli ai numarului 3
@@ -22,4 +23,3 @@ print('multipli ai numarului 3',mylist)           #multipli ai numarului 3
 
 mylist = [elem for elem in mylist if elem % 3== 0]
 print(mylist)
-

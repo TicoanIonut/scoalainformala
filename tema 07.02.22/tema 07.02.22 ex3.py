@@ -1,16 +1,16 @@
-def func(score):
-    if zzz> 0:
-        print(sss)
-    elif score <= 0:
-        print(sss)
+def func(result):
+    if flt_in_put> 0:
+        print(in_put)
+    elif flt_in_put <= 0:
+        print(in_put)
     else:
         print(0)
-    return score
-sss = input('>>')
+    return result
+in_put = input('>>')
 try:
-    zzz = float(sss)
+    flt_in_put = float(in_put)
 except:
     print(0)
     quit()
-aaa = func(zzz)
+call_func = func(flt_in_put)
 
