@@ -6,3 +6,4 @@ def only_number_sum(my_list):
     return sum(num_list)
 lst=(1,-3,5,'gsaaf',[2,3,'g'])
 print(only_number_sum(lst))
+
