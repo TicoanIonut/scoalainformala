@@ -1,171 +1,250 @@
-# -*- Nuha Alghamdi -*-
-# -*- nuhaalghamdi92@gmail.com -*-
-# -*- Oct 20 2019 -*-
+# inceput script
+print('Joc de X si 0 vs AI')
 
-import random
-
-#to ask user to choose a letter
-def select_letter():
-    let=""
-    auto_let=""
-    #ask user to select a letter (X or O)
-    while(let != "x" and let != "o"):
-        let=input("Select X or O: ").replace(" ","").strip().lower()
-        if let == "x":
-            auto_let="o"
-        else:
-            auto_let="x"
-    return let, auto_let
-
-#to prepare a clean board for the game
-def clean_board():
-    #an empty board for X and O values
-    brd=[" " for x in range(10)]
-    return brd
-
-#to check if board is full
-def is_board_full(board):
-    return board.count(" ")==0
-
-#to insert a letter (X or O) in a specific position
-def insert_letter(board,letter,pos):
-    board[pos]=letter
-
-#to take computer moves
-def computer_move(board,letter):
-    computer_letter=letter
-    possible_moves=[]
-    available_corners=[]
-    available_edges=[]
-    available_center=[]
-    position=-1
-
-    #all possible moves
-    for i in range(1,len(board)):
-        if board[i] ==" ":
-            possible_moves.append(i)
-
-    #if the position can make X or O wins!
-    #the computer will choose it to win or ruin a winning of the user
-    for let in ["x","o"]:
-        for i in possible_moves:
-            board_copy=board[:]
-            board_copy[i] = let
-            if is_winner(board_copy,let):
-                position=i
+# niste variabile
+castiga = 0
+pierde = 0
+X = 'X'
+O = 'O'
 
 
-    #if computer cannot win or ruin a winning, then it will choose a random position starting
-    #with the corners, the center then the edges
-    if position == -1:
-        for i in range(len(board)):
-            #an empty index on the board
-            if board[i]==" ":
-                if i in [1,3,7,9]:
-                    available_corners.append(i)
-                if i == 5:
-                    available_center.append(i)
-                if i in [2,4,6,8]:
-                    available_edges.append(i)
-        #check corners first
-        if len(available_corners)>0:
-            print("it comes here")
-            #select a random position in the corners
-            position=random.choice(available_corners)
-        #then check the availability of the center
-        elif len(available_center)>0:
-            #select the center as the position
-            position=available_center[0]
-        #lastly, check the availability of the edges
-        elif len(available_edges)>0:
-            #select a random position in the edges
-            position=random.choice(available_edges)
-    #fill the position with the letter
-    board[position]=computer_letter
+# Condidii peste conditii
+def conditii_castig():
+    global a1, a2, a3, a4, a5, a6, a7, a8, a9
+    global o_castiga, x_castiga, remiza
+    global nume_jucator, nume_jucator1
+    global castiga
+    if a1 == 'X' and a2 == 'X' and a3 == 'X':
+        x_castiga = True
+    elif a4 == 'X' and a5 == 'X' and a6 == 'X':
+        x_castiga = True
+    elif a7 == 'X' and a8 == 'X' and a9 == 'X':
+        x_castiga = True
+    elif a1 == 'X' and a4 == 'X' and a7 == 'X':
+        x_castiga = True
+    elif a2 == 'X' and a5 == 'X' and a8 == 'X':
+        x_castiga = True
+    elif a3 == 'X' and a6 == 'X' and a9 == 'X':
+        x_castiga = True
+    elif a1 == 'X' and a5 == 'X' and a9 == 'X':
+        x_castiga = True
+    elif a3 == 'X' and a5 == 'X' and a7 == 'X':
+        x_castiga = True
+    elif a1 == 'O' and a2 == 'O' and a3 == 'O':
+        o_castiga = True
+    elif a4 == 'O' and a5 == 'O' and a6 == 'O':
+        o_castiga = True
+    elif a7 == 'O' and a8 == 'O' and a9 == 'O':
+        o_castiga = True
+    elif a1 == 'O' and a4 == 'O' and a7 == 'O':
+        o_castiga = True
+    elif a2 == 'O' and a5 == 'O' and a8 == 'O':
+        o_castiga = True
+    elif a3 == 'O' and a6 == 'O' and a9 == 'O':
+        o_castiga = True
+    elif a1 == 'O' and a5 == 'O' and a9 == 'O':
+        o_castiga = True
+    elif a3 == 'O' and a5 == 'O' and a7 == 'O':
+        o_castiga = True
+    if x_castiga:
+        castiga = True
+        return print('EU AM CASTIGAT, mai incearca :D '), castiga
+    if o_castiga:
+        castiga = True
+        return print('Castigatorul este', nume_jucator.upper(), 'BRAVOS' '\n--Runda Terminata--\n'), castiga
+    if a1 != '-' and a2 != '-' and a3 != '-' and a4 != '-' and a5 != '-' and a6 != '-' and a7 != '-' and a8 != '-' and a9 != '-':
+        remiza = True
+        return print('Egalitate'), remiza
 
-#to draw the board
-def draw_board(board):
-    board[0]=-1
-    #draw first row
-    print("   |   |   ")
-    print(" "+board[1]+" | "+board[2]+" | "+board[3]+" ")
-    print("   |   |   ")
-    print("-"*11)
-    #draw second row
-    print("   |   |   ")
-    print(" "+board[4]+" | "+board[5]+" | "+board[6]+" ")
-    print("   |   |   ")
-    print("-"*11)
-    #draw third row
-    print("   |   |   ")
-    print(" "+board[7]+" | "+board[8]+" | "+board[9]+" ")
-    print("   |   |   ")
-    print("-"*11)
-    return board
+def verifica_o():
+    global a1, a2, a3, a4, a5, a6, a7, a8, a9, command_2
+    validare_reincercare = False
+    if command_2 == 1 and a1 == '-':
+        a1 = O
+    elif command_2 == 2 and a2 == '-':
+        a2 = O
+    elif command_2 == 3 and a3 == '-':
+        a3 = O
+    elif command_2 == 4 and a4 == '-':
+        a4 = O
+    elif command_2 == 5 and a5 == '-':
+        a5 = O
+    elif command_2 == 6 and a6 == '-':
+        a6 = O
+    elif command_2 == 7 and a7 == '-':
+        a7 = O
+    elif command_2 == 8 and a8 == '-':
+        a8 = O
+    elif command_2 == 9 and a9 == '-':
+        a9 = O
+    elif command_2 == 1 and a1 != '-' or command_2 == 2 and a2 != '-' or command_2 == 3 and a3 != '-' or command_2 == 4 and a4 != '-' or command_2 == 5 and a5 != '-' or command_2 == 6 and a6 != '-' or command_2 == 8 and a8 != '-' or command_2 == 7 and a7 != '-' or command_2 == 9 and a9 != '-':
+        while not validare_reincercare:
+            command_2 = int(input("Nu poti sa pui acolo, este deja completat"))
+            verifica_o()
+            validare_reincercare = True
+    elif command_2 > 9:
+        validare_reincercare = False
+        while not validare_reincercare:
+            command_2 = int(input("Selecteaza un numar de la 1 la 9 numai: "))
+            verifica_o()
+            validare_reincercare = True
 
-#to check if a specific player is the winner
-def is_winner(board,letter):
-    return (board[1] == letter and board[2] == letter and board[3] == letter) or \
-    (board[4] == letter and board[5] == letter and board[6] == letter) or \
-    (board[7] == letter and board[8] == letter and board[9] == letter) or \
-    (board[1] == letter and board[4] == letter and board[7] == letter) or \
-    (board[2] == letter and board[5] == letter and board[8] == letter) or \
-    (board[3] == letter and board[6] == letter and board[9] == letter) or \
-    (board[1] == letter and board[5] == letter and board[9] == letter) or \
-    (board[3] == letter and board[5] == letter and board[7] == letter)
+    return a1, a2, a3, a4, a5, a6, a7, a8, a9
 
-#to repeat the game
-def repeat_game():
 
-    repeat=input("Play again? Press y for yes and n for no: ")
-    while repeat != "n" and repeat != "y":
-        repeat=input("PLEASE, press y for yes and n for no: ")
-    return repeat
+def verifica_x():
+    global a1, a2, a3, a4, a5, a6, a7, a8, a9, command
+    validare_reincercare = False
+    if command == 1 and a1 == '-':
+        a1 = X
+    elif command == 2 and a2 == '-':
+        a2 = X
+    elif command == 3 and a3 == '-':
+        a3 = X
+    elif command == 4 and a4 == '-':
+        a4 = X
+    elif command == 5 and a5 == '-':
+        a5 = X
+    elif command == 6 and a6 == '-':
+        a6 = X
+    elif command == 7 and a7 == '-':
+        a7 = X
+    elif command == 8 and a8 == '-':
+        a8 = X
+    elif command == 9 and a9 == '-':
+        a9 = X
+    elif command == 1 and a1 != '-' or command == 2 and a2 != '-' or command == 3 and a3 != '-' or command == 4 and a4 != '-' or command == 5 and a5 != '-' or command == 6 and a6 != '-' or command == 8 and a8 != '-' or command == 7 and a7 != '-' or command == 9 and a9 != '-':
+        while not validare_reincercare:
+            command = int(input("Nu poti sa pui acolo"))
+            verifica_x()
+            validare_reincercare = True
+    elif command > 9:
+        validare_reincercare = False
+        while not validare_reincercare:
+            command = int(input("Selecteaza un numar de la 1 la 9:"))
+            verifica_x()
+            validare_reincercare = True
+    return a1, a2, a3, a4, a5, a6, a7, a8, a9
 
-#to play the game
-def play_game():
 
-    letter, auto_letter= select_letter()
-    #clean the board
-    board=clean_board()
-    board=draw_board(board)
-    #check if there are empty positions on the board
-    while is_board_full(board) == False:
-        try:
-            position=int(input("Select a position (1-9) to place an "+letter+" : " ))
+# Tura BOTULUI
+def tura_npc():
+    global a1, a2, a3, a4, a5, a6, a7, a8, a9, command
+    global npc_alege
+    npc_alege = False
+    alegeri_npc = (3, 5 ,7 ,9, 1, 2, 4, 6, 8)
+    while not npc_alege:
+        command = None
+        # alege prima cifra din alegeri_npc care e valabila in loc sa faca random
+        for picks in alegeri_npc:
+            if picks == 3 and a3 == '-':
+                command = 3
+                break
+            elif picks == 5 and a5 == '-':
+                command = 5
+                break
+            elif picks == 7 and a7 == '-':
+                command = 7
+                break
+            elif picks == 9 and a9 == '-':
+                command = 9
+                break
+            elif picks == 1 and a1 == '-':
+                command = 1
+                break
+            elif picks == 2 and a2 == '-':
+                command = 2
+                break
+            elif picks == 4 and a4 == '-':
+                command = 4
+                break
+            elif picks == 6 and a6 == '-':
+                command = 6
+                break
+            elif picks == 8 and a8 == '-':
+                command = 8
+                break
+        #         incepe sa verifice fiecare alegere si sa puna x in locurile definite mai sus
+        if command == 3 and a3 == '-':
+            a3 = X
+            npc_alege = True
+        elif command == 5 and a5 == '-':
+            a5 = X
+            npc_alege = True
+        elif command == 7 and a7 == '-':
+            a7 = X
+            npc_alege = True
+        elif command == 9 and a9 == '-':
+            a9 = X
+            npc_alege = True
+        elif command == 1 and a1 == '-':
+            a1 = X
+            npc_alege = True
+        elif command == 2 and a2 == '-':
+            a2 = X
+            npc_alege = True
+        elif command == 4 and a4 == '-':
+            a4 = X
+            npc_alege = True
+        elif command == 6 and a6 == '-':
+            a6 = X
+            npc_alege = True
+        elif command == 8 and a8 == '-':
+            a8 = X
+            npc_alege = True
+    return a1, a1, a3, a4, a5, a6, a7, a8, a9, print('Eu ALEG', command)
 
-        except:
-            position=int(input("PLEASE enter position using only NUMBERS from 1-9: "))
+# un mic loop
+while True:
+    a1 = '-'
+    a2 = '-'
+    a3 = '-'
+    a4 = '-'
+    a5 = '-'
+    a6 = '-'
+    a7 = '-'
+    a8 = '-'
+    a9 = '-'
+    nume_jucator = 'Player Neo'
+    nume_jucator1 = 'NPC'
+    x_castiga = False
+    o_castiga = False
+    npc_alege = False
+    castiga = False
+    remiza = False
 
-        #check if user selects out of range position
-        if position not in range(1,10):
-            position=int(input("Please, choose another position to place an "+letter+" from 1 to 9 :"))
+# input cu niste conditii si mesaj de le NPC
+    input_1 = input('>X si 0> (scrie incepe sau retry) ').lower()
+    if input_1 == 'incepe' or input_1 == 'retry':
+        ai = input('Vrei sa joci impotriva MEA :D ?: ')
+        joc_inceput = True
+        print('Eu sunt un NPC si o sa incerc sa te rup.')
+        nume_jucator = input('Cum te Cheama? ')
+        print("Hai sa vedem care pe care.")
+        print(' ', 1, '|', 2, '|', 3, '\n ---------- \n', '', 4, '|', 5, '|', 6, '\n ----------\n', '', 7,
+                  '|', 8, '|', 9, '\n')
 
-        #check if user selects an occupied position by X or O
-        if board[position] != " ":
-            position=int(input("Please, choose an empty position to place an "+letter+" from 1 to 9: "))
-
-        #put the letter in the selected position & computer plays then draw the board
-        insert_letter(board,letter,position)
-        #computer move
-        computer_move(board,auto_letter)
-        #draw the board
-        board=draw_board(board)
-
-        if is_winner(board,letter):
-            print("Congratulations! You Won.")
-            return repeat_game()
-        elif is_winner(board,auto_letter):
-            print("Hard Luck! Computer won")
-            return repeat_game()
-
-    #if " " not in board:
-    if is_board_full(board):
-        print("Tie Game :)")
-        return repeat_game()
-
-#Start the game
-print("Welcome to Tic Tac Toe.")
-repeat="y"
-while(repeat=="y"):
-    repeat=play_game()
+        while ai == 'da' or ai == 'yes' or ai == 'sigur' or ai == 'go' or ai == 'bot':
+            print('Yo eu sunt NPC.')
+            nume_jucator1 = 'NPC'
+            print("Hai sa incepem", nume_jucator.upper(), '\n\n')
+            print(' ', 1, '|', 2, '|', 3, '\n ---------- \n', '', 4, '|', 5, '|', 6, '\n ----------\n', '', 7,
+                  '|', 8, '|', 9, '\n')
+# isi face tura aici el primul cu X
+            print("NPC alege Acum")
+            tura_npc()
+            print('\n ', a1, '|', a2, '|', a3, '\n ---------- \n', '', a4, '|', a5, '|', a6, '\n ----------\n', '',
+                  a7, '|', a8, '|', a9, '\n')
+            conditii_castig()
+            if castiga or remiza:
+                break
+# dupa aia pui tu 0 dupa el
+            command_2 = int(input('>> Unde vrei sa pui 0? (doar cifre intre 1-9): '))
+            verifica_o()
+            print('\n ', a1, '|', a2, '|', a3, '\n ---------- \n', '', a4, '|', a5, '|', a6, '\n ----------\n', '',
+                  a7, '|', a8, '|', a9, '\n')
+            conditii_castig()
+            if castiga or remiza:
+                break
+    else:
+        print("Hopa-asa ceva nu a mers bine")

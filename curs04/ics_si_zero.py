@@ -28,7 +28,7 @@ def tura(jucator):
     if 'x'== jucator:
         pozitie_x(jucator)
     if '0'== jucator:
-        pozitie_0(jucator)
+        pozitie_0()
 def gata_joc():
     verifica_castigator()
     verifica_remiza()
@@ -111,32 +111,44 @@ def pozitie_x(jucator):
             print('nu se poate acolo')
     tabla[pozitie] = jucator
     display()
-def pozitie_0(jucator):
-    numere='123456789'
-    pozitie =random.choice(numere)
+def pozitie_0():
+    # numere = '123456789'
+    # pozitie = random.choice(numere)
+    n1 = '1379'
+    n2 = '2468'
+    if tabla[4] == '_':
+        pozitie = '5'
+    elif tabla[0] == '_' or tabla[2] == '_'or tabla[6] == '_'or tabla[8] == '_':
+        pozitie = random.choice(n1)
+    elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
+        pozitie =random.choice(n2)
     validare = False
     while not validare:
         while pozitie not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
-            pozitie =random.choice(numere)
+            # numere = '123456789'
+            # pozitie = random.choice(numere)
+            if tabla[4] == '_':
+                pozitie = '5'
+            elif tabla[0] == '_' or tabla[2] == '_' or tabla[6] == '_' or tabla[8] == '_':
+                pozitie = random.choice(n1)
+            elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
+                pozitie = random.choice(n2)
             print('Selecteaza o alta pozitie')
         pozitie = int(pozitie) - 1
         if tabla[pozitie] == '_':
             validare = True
         else:
-            print('nu se poate acolo')
-            pozitie =random.choice(numere)
+             print('nu se poate acolo')
     tabla[pozitie] = jucator
     display()
-def mutari_calculator():
-        for i in [5, 1, 7, 3, 2, 9, 8, 6, 4]:
-             return i
 def replay():
     global castigator
+    global joc
     if castigator=='x' or castigator=='0'or castigator== None:
         castigator=input('Vrei sa mai joci? y/n')
-        if castigator== 'y' or castigator== 'Y' :
-            print(joc())
-        else:
-            print('Multumim pentru joc')
-            quit()
+    if castigator== 'y' or castigator== 'Y' :
+        print(joc)
+    else:
+        print('Multumim pentru joc')
+        quit()
 joc()
