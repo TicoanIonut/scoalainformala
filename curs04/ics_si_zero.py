@@ -125,8 +125,8 @@ def pozitie_0():
     validare = False
     while not validare:
         while pozitie not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
-            # numere = '123456789'
-            # pozitie = random.choice(numere)
+            #numere = '123456789'
+            #pozitie = random.choice(numere)
             if tabla[4] == '_':
                 pozitie = '5'
             elif tabla[0] == '_' or tabla[2] == '_' or tabla[6] == '_' or tabla[8] == '_':
@@ -142,13 +142,10 @@ def pozitie_0():
     tabla[pozitie] = jucator
     display()
 def replay():
-    global castigator
-    global joc
-    if castigator=='x' or castigator=='0'or castigator== None:
-        castigator=input('Vrei sa mai joci? y/n')
-    if castigator== 'y' or castigator== 'Y' :
-        print(joc)
+    if joc_in_derulare ==False:
+        zzz= input('Vrei sa mai joci? y/n')
+        if zzz== 'y'.lower():
+           return joc()
     else:
         print('Multumim pentru joc')
-        quit()
 joc()

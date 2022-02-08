@@ -8,3 +8,10 @@ def func():
         print(0)
 func()
 
+def func1():
+    inpt=input('>')
+    if inpt.isnumeric():                #nu functioneaza cu float
+        print(inpt)
+    else:
+        print('0')
+func1()
