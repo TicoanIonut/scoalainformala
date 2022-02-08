@@ -20,4 +20,4 @@ def func2(n):
     else:                               #suma numere
         return n+ func2(n-1)
 
-print(func(7),'nr impare\n',func1(7),'nr pare\n',func2(7),'suma nr\n')
+print(func(7),'nr impare \n',func1(7),'nr pare\n',func2(7),'suma nr')
