@@ -52,23 +52,42 @@
     #bloc de expresii
 #except:
     #daca apre o exceptie si vrem sa afisam ceva
-try:
-    val=int(input('prima cifra cnp'))
+# try:
+#     val=int(input('prima cifra cnp'))
     #impartire =1/val
-    lista=[1]
+    # lista=[1]
     #lista.append('2')
-    valoare = lista[0.5]
-except TypeError:
-    print('tip de eroare')
-except AttributeError:
-    print('eroare la atribut')
-except ValueError:
-    print('intodu o cifra')
-except ZeroDivisionError:
-    print('eroare la impartire')
-except Exception as e:
-    print('exceptie la impartire',e)
+    #valoare = lista[0.5]
+#     print('sunt un try')
+# except (TypeError,AttributeError,ValueError,ZeroDivisionError):
+#     print('tip de eroare')
+# else:
+#     print('se executa daca nu este exceptie')
+# finally:
+#     print('se executa la final oricum')
+# print('am iesit din try except')
+# except AttributeError:
+#     print('eroare la atribut')
+# except ValueError:
+#     print('intodu o cifra')
+# except ZeroDivisionError:
+#     print('eroare la impartire')
+# except Exception as e:
+#     print('exceptie la impartire',e)
 
+my_var=input('nr intreg')
+my_int=None
+try:
+    my_int=int(my_var)
+except Exception as e:
+    my_int='test'
+    print('exceptie este ',e,my_int)
+else:
+    print('daca nu apare exceptie',my_int)
+finally:
+    my_int='www'
+    print('afisaza in oric caz',my_int)
+print(my_int)
 
 
 

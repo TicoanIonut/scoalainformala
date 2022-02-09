@@ -7,7 +7,6 @@ pierde = 0
 X = 'X'
 O = 'O'
 
-
 # Condidii peste conditii
 def conditii_castig():
     global a1, a2, a3, a4, a5, a6, a7, a8, a9
@@ -135,63 +134,53 @@ def tura_npc():
     alegeri_npc = (3, 5 ,7 ,9, 1, 2, 4, 6, 8)
     while not npc_alege:
         command = None
-        # alege prima cifra din alegeri_npc care e valabila in loc sa faca random
+        # alege prima cifra din alegeri_npc care e valabila in loc sa faca random si o verifica daca e goala si o pune in locul potrivit bazat pe regulile date
         for picks in alegeri_npc:
             if picks == 3 and a3 == '-':
                 command = 3
+                a3 = X
+                npc_alege = True
                 break
             elif picks == 5 and a5 == '-':
                 command = 5
+                a5 = X
+                npc_alege = True
                 break
             elif picks == 7 and a7 == '-':
                 command = 7
+                a7 = X
+                npc_alege = True
                 break
             elif picks == 9 and a9 == '-':
                 command = 9
+                a9 = X
+                npc_alege = True
                 break
             elif picks == 1 and a1 == '-':
                 command = 1
+                a1 = X
+                npc_alege = True
                 break
             elif picks == 2 and a2 == '-':
                 command = 2
+                a2 = X
+                npc_alege = True
                 break
             elif picks == 4 and a4 == '-':
                 command = 4
+                a4 = X
+                npc_alege = True
                 break
             elif picks == 6 and a6 == '-':
                 command = 6
+                a6 = X
+                npc_alege = True
                 break
             elif picks == 8 and a8 == '-':
                 command = 8
+                a8 = X
+                npc_alege = True
                 break
-        #         incepe sa verifice fiecare alegere si sa puna x in locurile definite mai sus
-        if command == 3 and a3 == '-':
-            a3 = X
-            npc_alege = True
-        elif command == 5 and a5 == '-':
-            a5 = X
-            npc_alege = True
-        elif command == 7 and a7 == '-':
-            a7 = X
-            npc_alege = True
-        elif command == 9 and a9 == '-':
-            a9 = X
-            npc_alege = True
-        elif command == 1 and a1 == '-':
-            a1 = X
-            npc_alege = True
-        elif command == 2 and a2 == '-':
-            a2 = X
-            npc_alege = True
-        elif command == 4 and a4 == '-':
-            a4 = X
-            npc_alege = True
-        elif command == 6 and a6 == '-':
-            a6 = X
-            npc_alege = True
-        elif command == 8 and a8 == '-':
-            a8 = X
-            npc_alege = True
     return a1, a1, a3, a4, a5, a6, a7, a8, a9, print('Eu ALEG', command)
 
 # un mic loop
