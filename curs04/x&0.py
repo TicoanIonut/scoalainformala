@@ -1,12 +1,13 @@
 # inceput script
 print('Joc de X si 0 vs AI')
-
 # niste variabile
 castiga = 0
 pierde = 0
 X = 'X'
 O = 'O'
-
+def tabla():
+    print('\n ', a1, '|', a2, '|', a3,"     1 | 2 | 3"'\n ---------- \n', '', a4, '|', a5, '|', a6,"     4 | 5 | 6" '\n ----------\n', '',
+          a7, '|', a8, '|', a9,"     7 | 8 | 9" '\n')
 # Condidii peste conditii
 def conditii_castig():
     global a1, a2, a3, a4, a5, a6, a7, a8, a9
@@ -87,9 +88,7 @@ def verifica_o():
             command_2 = int(input("Selecteaza un numar de la 1 la 9 numai: "))
             verifica_o()
             validare_reincercare = True
-
     return a1, a2, a3, a4, a5, a6, a7, a8, a9
-
 
 def verifica_x():
     global a1, a2, a3, a4, a5, a6, a7, a8, a9, command
@@ -124,7 +123,6 @@ def verifica_x():
             verifica_x()
             validare_reincercare = True
     return a1, a2, a3, a4, a5, a6, a7, a8, a9
-
 
 # Tura BOTULUI
 def tura_npc():
@@ -184,6 +182,7 @@ def tura_npc():
     return a1, a1, a3, a4, a5, a6, a7, a8, a9, print('Eu ALEG', command)
 
 # un mic loop
+
 while True:
     a1 = '-'
     a2 = '-'
@@ -210,28 +209,24 @@ while True:
         print('Eu sunt un NPC si o sa incerc sa te rup.')
         nume_jucator = input('Cum te Cheama? ')
         print("Hai sa vedem care pe care.")
-        print(' ', 1, '|', 2, '|', 3, '\n ---------- \n', '', 4, '|', 5, '|', 6, '\n ----------\n', '', 7,
-                  '|', 8, '|', 9, '\n')
+        tabla()
 
         while ai == 'da' or ai == 'yes' or ai == 'sigur' or ai == 'go' or ai == 'bot':
             print('Yo eu sunt NPC.')
             nume_jucator1 = 'NPC'
             print("Hai sa incepem", nume_jucator.upper(), '\n\n')
-            print(' ', 1, '|', 2, '|', 3, '\n ---------- \n', '', 4, '|', 5, '|', 6, '\n ----------\n', '', 7,
-                  '|', 8, '|', 9, '\n')
+            tabla()
 # isi face tura aici el primul cu X
             print("NPC alege Acum")
             tura_npc()
-            print('\n ', a1, '|', a2, '|', a3, '\n ---------- \n', '', a4, '|', a5, '|', a6, '\n ----------\n', '',
-                  a7, '|', a8, '|', a9, '\n')
+            tabla()
             conditii_castig()
             if castiga or remiza:
                 break
 # dupa aia pui tu 0 dupa el
             command_2 = int(input('>> Unde vrei sa pui 0? (doar cifre intre 1-9): '))
             verifica_o()
-            print('\n ', a1, '|', a2, '|', a3, '\n ---------- \n', '', a4, '|', a5, '|', a6, '\n ----------\n', '',
-                  a7, '|', a8, '|', a9, '\n')
+            tabla()
             conditii_castig()
             if castiga or remiza:
                 break
