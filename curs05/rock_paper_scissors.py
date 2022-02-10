@@ -2,12 +2,15 @@ from random import choice
 
 nume_jucator = input('Cum te cheama?')
 
-print('Optiunile tale sunt\npiatra\nfoarfece\nhartie')
+print(f'Salut {nume_jucator}, Optiunile tale sunt\npiatra\nfoarfece\nhartie')
 
 while True:
 
     alegere_jucator = input('Alege o optiune:')
     alegeri_totale = ['piatra', 'foarfece', 'hartie']
+    while alegere_jucator not in ['piatra', 'foarfece', 'hartie']:
+            print(f'{alegere_jucator}, nu este o alegere buna, alege din nou')
+            alegere_jucator = input('Alege o optiune:')
     alege_calculator = choice(alegeri_totale)
 
     print(f'Tu ai ales {alegere_jucator}, si NPCul a ales {alege_calculator}')

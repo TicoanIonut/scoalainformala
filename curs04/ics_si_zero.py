@@ -142,10 +142,10 @@ def pozitie_0():
     tabla[pozitie] = jucator
     display()
 def replay():
-    if joc_in_derulare ==False:
-        zzz= input('Vrei sa mai joci? y/n')
-        if zzz== 'y'.lower():
-           return joc()
-    else:
-        print('Multumim pentru joc')
+    if joc_in_derulare == False:
+        restart=input('Vrei sa mai joci? y/n')
+        if restart == 'y':
+           joc()
+        else:
+            print('Multumim pentru joc!')
 joc()
