@@ -9,19 +9,3 @@ mmm =input('enter email')
 if emailval(mmm)==True:
     v=mmm.split('@')
     print(f'validare reusira @{v[1]}')
-
-# def mal(mail):
-#     cifnr=mail.split('@')
-#     cifnr1=mail.split('.')
-#     if cifnr[0] is type(1) or type('s'):
-#         if cifnr1[0] is type(1) or type('s'):
-#             if cifnr1[-1] is not type(1):
-#                 return True
-#     else:
-#         return False
-# mmm=input('enter mail')
-# if mal(mmm) == True:
-#     v=mmm.split('@')
-#     print(f'validare reusita @{v[-1]}')
-# elif mal(mmm) == False:
-#     print('not valid')
