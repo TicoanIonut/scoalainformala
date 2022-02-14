@@ -28,5 +28,3 @@ if cnpval()==True:
      print(f'CNP Valid: {cnp}')
 else:
     print('CNP invalid, mai incearca')
-
-
