@@ -1,0 +1,14 @@
+{
+  "producator1": {
+    "masini": "dacia",
+    "culoare": "rosu"
+  },
+  "producator2": {
+    "masina": "volvo",
+    "culoare": "alb"
+  },
+  "producator3": {
+    "masina": "renault",
+    "culoare": "verde"
+  }
+}
