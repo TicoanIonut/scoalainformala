@@ -26,29 +26,25 @@ import json
 # print(variabila.loc[0])
 # print(variabila.loc[[0, 1]])
 # print(variabila.loc[['prod1', 'prod2']])
-data = {
-  "producator1": {
-    "masini": "dacia",
-    "culoare": "rosu"
-  },
-  "producator2": {
-    "masina": "volvo",
-    "culoare": "alb"
-  },
-  "producator3": {
-    "masina": "renault",
-    "culoare": "verde"
-  }
-}
-variabila1 = pd.DataFrame(data)
+# data = {
+#   "producator1": {
+#     "masini": "dacia",
+#     "culoare": "rosu"
+#   },
+#   "producator2": {
+#     "masina": "volvo",
+#     "culoare": "alb"
+#   },
+#   "producator3": {
+#     "masina": "renault",
+#     "culoare": "verde"
+#   }
+# }
+# variabila1 = pd.DataFrame(data)
 # variabila1 = pd.read_json('data.json')
 # print(variabila1)
 # url = 'https://api.exchangerate-api.com/v4/latest/USD'
 # var1 = pd.read_json(url)
 # print(var1)
-fisier = variabila1.to_csv("data.csv")
-
-
-
-
+# fisier = variabila1.to_csv("data.csv")
 

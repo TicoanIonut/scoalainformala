@@ -1,4 +1,5 @@
 import random
+
 tabla = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
 
 
@@ -136,27 +137,28 @@ def pozitie_x():
 
 
 def pozitie_0():
-    # numere = '123456789'
-    # pozitie = random.choice(numere)
-    n1 = '1379'
-    n2 = '2468'
-    if tabla[4] == '_':
-        pozitie = '5'
-    elif tabla[0] == '_' or tabla[2] == '_' or tabla[6] == '_' or tabla[8] == '_':
-        pozitie = random.choice(n1)
-    elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
-        pozitie = random.choice(n2)
+    numere = '123456789'
+    pozitie = random.choice(numere)
+    # n1 = '1379'
+    # n2 = '2468'
+    # if tabla[4] == '_':
+    #     pozitie = '5'
+    # elif tabla[0] == '_' or tabla[2] == '_'or tabla[6] == '_'or tabla[8] == '_':
+    #     pozitie = random.choice(n1)
+    # elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
+    #     pozitie =random.choice(n2)
     validare = False
     while not validare:
         while pozitie not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
-            # numere = '123456789'
-            # pozitie = random.choice(numere)
-            if tabla[4] == '_':
-                pozitie = '5'
-            elif tabla[0] == '_' or tabla[2] == '_' or tabla[6] == '_' or tabla[8] == '_':
-                pozitie = random.choice(n1)
-            elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
-                pozitie = random.choice(n2)
+            numere = '123456789'
+            pozitie = random.choice(numere)
+            # if tabla[4] == '_':
+            #     pozitie = '5'
+            # elif tabla[0] == '_' or tabla[2] == '_' or tabla[6] == '_' or tabla[8] == '_':
+            #     pozitie = random.choice(n1)
+            # elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
+            #     pozitie = random.choice(n2)
+
             print('Selecteaza o alta pozitie')
         pozitie = int(pozitie) - 1
         if tabla[pozitie] == '_':
@@ -168,10 +170,13 @@ def pozitie_0():
 
 
 def replay():
-    while joc_in_derulare is False:
-        ask = input(f" {jucator}, 'Vrei sa mai joci? y/n".lower())
-        if ask != 'y':
-            break
+    if joc_in_derulare is True:
+        restart = input('Vrei sa mai joci? y/n')
+        if restart == 'y':
+            joc()
+        else:
+            print('Multumim pentru joc!')
+            quit()
 
 
-print(joc())
+joc()
