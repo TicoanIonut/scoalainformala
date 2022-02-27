@@ -12,9 +12,12 @@ def chan():                                                             # change
                            '>>'))
         if change in range(len(rz.index + 1)):
             rz = rz.drop(rz.index[change])
-            with open('task.csv', 'w') as file:
+            print(rz)
+            with open('temp.csv', 'w') as file:                                         # scriere temp
                 write = csv.writer(file)
                 write.writerow([task(), data(), pers(), cat()])
+                zs = pd.read_csv('temp.csv', header=None)
+                rz = rz.append(zs, rz.index[change])
             print(rz)
         else:
             chan()
@@ -79,12 +82,11 @@ def m_inp():
                   '>'))
     if m == 1:
         return meniu()
-    if m != 0 or m != 1:
-        return m
     if m == 0:
         print('Thank you caome again')
         quit()
-    return m_inp()
+    else:
+        return m_inp()
 
 
 def meniu():
