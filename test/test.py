@@ -3,11 +3,26 @@ import datetime
 import pandas as pd
 
 
-def search():
-    pass                                                            # ultimul punct aici
+def chan():                                                             # change task curently not working
+    rz = pd.read_csv('task.csv', header=None)
+    print(rz)
+    try:
+        change = int(input('\n'
+                           'Scrie o cifra conform indexului pe care vrei sa il modifici\n'
+                           '>>'))
+        if change in range(len(rz.index + 1)):
+            rz = rz.drop(rz.index[change])
+            with open('task.csv', 'w') as file:
+                write = csv.writer(file)
+                write.writerow([task(), data(), pers(), cat()])
+            print(rz)
+        else:
+            chan()
+    except ValueError:
+        chan()
 
 
-def delet():
+def delet():                                                                # delete task
     rd = pd.read_csv('task.csv', header=None)
     print(rd)
     try:
@@ -20,12 +35,12 @@ def delet():
         else:
             delet()
     except ValueError:
-            delet()
+        delet()
     m_inp()
 
 
 def men_inp():
-    print('Alege o categorie 1-6\n'
+    print('Alege o categorie 1-6\n'                                             # meniu principal
           '1 Listare date (sortare în funcție de categorie)\n'
           '2 Sortare: 8 optiuni \n'
           '3 Filtrare date (în funcție de detalii)\n'
@@ -36,7 +51,7 @@ def men_inp():
 
 
 def aleg_sort():
-    print('Alege sortare, o opțiune 1-8 sau 9 pentru meiu principal\n'
+    print('Alege sortare, o opțiune 1-8 sau 9 pentru meiu principal\n'          # meniu alegere sortare
           '1 Sortare ascendenta Task\n'
           '2 Sortare descendenta Task\n'
           '3 Sortare ascendenta data\n'
@@ -50,7 +65,7 @@ def aleg_sort():
 
 
 def filt_aleg():
-    print('Alege o categorie de filtrare 1-4:\n'
+    print('Alege o categorie de filtrare 1-4:\n'                        # meniu alegere filtre
           '1 task\n'
           '2 data\n'
           '3 persoana\n'
@@ -60,7 +75,7 @@ def filt_aleg():
 
 
 def m_inp():
-    m = int(input('Press 0 pentu quit sau 1 pentru meniu\n'
+    m = int(input('Press 0 pentu quit sau 1 pentru meniu\n'             # continuare in meniu sau quit
                   '>'))
     if m == 1:
         return meniu()
@@ -162,13 +177,13 @@ def meniu():
     if command1 == 4:
         taskuri_doi()                                                   # adaugare nou task
     if command1 == 5:
-        print('Editarea detaliilor (task, data, persoana responsabila sau categoria)')
-    if command1 == 6:
+        chan()                                                          # editare task
+    if command1 == 6:                                                   # deleting task
         delet()
 
 
 def categorii():
-    with open('categorii.csv', 'w') as file:
+    with open('categorii.csv', 'w') as file:                                # alegere categorii
         categ1 = input('Alge categoria 1 ')
         categ2 = input('Alge categoria 2 ')
         while categ2 == categ1:
@@ -185,14 +200,14 @@ def categorii():
 
 
 def pcateg():
-    with open('categorii.csv') as file:
+    with open('categorii.csv') as file:                                     # verifica categorii
         reader = csv.reader(file)
         for line in reader:
             return line
 
 
 def task():
-    ttt = input('Introdu un Task ').lower()
+    ttt = input('Introdu un Task ').lower()                                 # introducere taskuri
     with open('task.csv', 'r') as file:
         for line in file.readlines():
             if ttt in line:
@@ -201,7 +216,7 @@ def task():
 
 
 def data():
-    ddd = input('Introdu data limita Z.L.A ')
+    ddd = input('Introdu data limita Z.L.A ')                               # introducere data
     try:
         if datetime.datetime.strptime(ddd, "%d.%m.%Y"):
             return ddd
@@ -210,22 +225,24 @@ def data():
 
 
 def pers():
-    ppp = input('Introdu persoana responsabila ').lower()
-    while ppp.isnumeric():
+    ppp = input('Introdu persoana responsabila ').lower()                   # introducere pers
+    while ppp.isalpha() is False:
         ppp = input('Introdu persoana responsabila ').lower()
     return ppp
 
 
 def cat():
-    ccc = input('Introdu o categorie ',).lower()
+    ccc = input('Introdu o categorie ',).lower()                            # introducere categorie
     while ccc not in pcateg()[0:]:
-        ccc = input(f'Eroare! \nAlege o categorie din cele disponibile! {pcateg()[0:]}').lower()
+        ccc = input(f'Eroare! \nAlege o categorie din cele disponibile!\n'
+                    f'{pcateg()[0:]}\n'
+                    f'>>').lower()
     return ccc
 
 
 def taskuri_doi():
     while True:
-        with open('task.csv', 'a') as file:
+        with open('task.csv', 'a') as file:                             # functia pentru adaugare taskuri
             write = csv.writer(file)
             write.writerow([task(), data(), pers(), cat()])
         iii = input('Next task?\nda pentru da\nsau orice pentru nu ').lower()
@@ -235,7 +252,7 @@ def taskuri_doi():
             meniu()
 
 
-def taskuri():
+def taskuri():                                                          # functia principala
     categorii()
     with open('task.csv', 'a') as file:
         write = csv.writer(file)
