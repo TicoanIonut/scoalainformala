@@ -5,8 +5,10 @@ castiga = 0
 pierde = 0
 X = 'X'
 O = 'O'
+
+
 def tabla():
-    print('\n ', a1, '|', a2, '|', a3,"     1 | 2 | 3"'\n ---------- \n', '', a4, '|', a5, '|', a6,"     4 | 5 | 6" '\n ----------\n', '',
+    print('\n ', a1, '|', a2, '|' , a3 ,"     1 | 2 | 3"'\n ---------- \n', '', a4, '|', a5, '|', a6,"     4 | 5 | 6" '\n ----------\n', '',
           a7, '|', a8, '|', a9,"     7 | 8 | 9" '\n')
 # Condidii peste conditii
 def conditii_castig():

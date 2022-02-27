@@ -1,8 +1,6 @@
 import random
 
-tabla = ['_', '_', '_',
-         '_', '_', '_',
-         '_', '_', '_']
+tabla = ['_', '_', '_', '_', '_', '_', '_', '_', '_']
 
 
 def display():
@@ -160,6 +158,7 @@ def pozitie_0():
             #     pozitie = random.choice(n1)
             # elif tabla[1] == '_' or tabla[3] == '_' or tabla[5] == '_' or tabla[7] == '_':
             #     pozitie = random.choice(n2)
+
             print('Selecteaza o alta pozitie')
         pozitie = int(pozitie) - 1
         if tabla[pozitie] == '_':
