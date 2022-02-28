@@ -13,11 +13,9 @@ def chan():                                                             # change
         if change in range(len(rz.index + 1)):
             rz = rz.drop(rz.index[change])
             print(rz)
-            with open('temp.csv', 'w') as file:                                         # scriere temp
+            with open('task.csv', 'a', newline="change") as file:                                         # scriere temp
                 write = csv.writer(file)
                 write.writerow([task(), data(), pers(), cat()])
-                zs = pd.read_csv('temp.csv', header=None)
-                rz = rz.append(zs, rz.index[change])
             print(rz)
         else:
             chan()

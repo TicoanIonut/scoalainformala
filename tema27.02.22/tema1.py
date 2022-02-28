@@ -11,13 +11,7 @@ def chan():                                                             # change
                            'Scrie o cifra conform indexului pe care vrei sa il modifici\n'
                            '>>'))
         if change in range(len(rz.index + 1)):
-            rz = rz.drop(rz.index[change])
-            print(rz)
-            with open('temp.csv', 'w') as file:                                         # scriere temp
-                write = csv.writer(file)
-                write.writerow([task(), data(), pers(), cat()])
-                zs = pd.read_csv('temp.csv', header=None)
-                rz = rz.append(zs, rz.index[change])
+            rz.loc[change] = [task(), data(), pers(), cat()]
             print(rz)
         else:
             chan()
@@ -25,7 +19,7 @@ def chan():                                                             # change
         chan()
 
 
-def delet():                                                                # delete task
+def delet():                                                                # delete task not working properly
     rd = pd.read_csv('task.csv', header=None)
     print(rd)
     try:
