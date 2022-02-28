@@ -11,8 +11,9 @@ def chan():                                                             # change
                            'Scrie o cifra conform indexului pe care vrei sa il modifici\n'
                            '>>'))
         if change in range(len(rz.index + 1)):
-            rz.loc[change] = [task(), data(), pers(), cat()]
+            rz.iloc[change] = task(), data(), pers(), cat()
             print(rz)
+            m_inp()
         else:
             chan()
     except ValueError:
@@ -29,6 +30,7 @@ def delet():                                                                # de
         if dele in range(len(rd.index + 1)):
             rd = rd.drop(rd.index[dele])
             print(rd)
+            m_inp()
         else:
             delet()
     except ValueError:
@@ -207,7 +209,7 @@ def task():
     with open('task.csv', 'r') as file:
         for line in file.readlines():
             if ttt in line:
-                ttt = input('Introdu alt task, acesta exista deja')
+                ttt = input('Introdu alt task, acesta exista ')
     return ttt
 
 
