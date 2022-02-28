@@ -11,18 +11,16 @@ def chan():                                                             # change
                            'Scrie o cifra conform indexului pe care vrei sa il modifici\n'
                            '>>'))
         if change in range(len(rz.index + 1)):
-            rz = rz.drop(rz.index[change])
-            # with open('task.csv', 'w') as file:
-            #     write = csv.writer(file)
-            #     write.writerow([task(), data(), pers(), cat()])
+            rz.iloc[change] = task(), data(), pers(), cat()
             print(rz)
+            m_inp()
         else:
             chan()
     except ValueError:
         chan()
 
 
-def delet():                                                                # delete task
+def delet():                                                                # delete task not working properly
     rd = pd.read_csv('task.csv', header=None)
     print(rd)
     try:
@@ -32,6 +30,7 @@ def delet():                                                                # de
         if dele in range(len(rd.index + 1)):
             rd = rd.drop(rd.index[dele])
             print(rd)
+            m_inp()
         else:
             delet()
     except ValueError:
@@ -79,12 +78,11 @@ def m_inp():
                   '>'))
     if m == 1:
         return meniu()
-    if m != 0 or m != 1:
-        return m
     if m == 0:
         print('Thank you caome again')
         quit()
-    return m_inp()
+    else:
+        return m_inp()
 
 
 def meniu():
@@ -211,7 +209,7 @@ def task():
     with open('task.csv', 'r') as file:
         for line in file.readlines():
             if ttt in line:
-                ttt = input('Introdu alt task, acesta exista deja')
+                ttt = input('Introdu alt task, acesta exista ')
     return ttt
 
 
