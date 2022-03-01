@@ -3,16 +3,18 @@ import datetime
 import pandas as pd
 
 
-def chan():                                                             # change task curently not working
-    rz = pd.read_csv('task.csv', header=None)
-    print(rz)
+def chan():                                                             # change task
+    rd = pd.read_csv('task.csv')
+    rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+    print(rd)
     try:
         change = int(input('\n'
                            'Scrie o cifra conform indexului pe care vrei sa il modifici\n'
                            '>>'))
-        if change in range(len(rz.index + 1)):
-            rz.iloc[change] = task(), data(), pers(), cat()
-            print(rz)
+        if change in range(len(rd.index + 1)):
+            rd.iloc[change] = task(), data(), pers(), cat()
+            rd.to_csv('task.csv', index=False, columns=None)
+            print(rd)
             m_inp()
         else:
             chan()
@@ -20,8 +22,9 @@ def chan():                                                             # change
         chan()
 
 
-def delet():                                                                # delete task not working properly
-    rd = pd.read_csv('task.csv', header=None)
+def delet():                                                                # delete task
+    rd = pd.read_csv('task.csv')
+    rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
     print(rd)
     try:
         dele = int(input('\n'
@@ -29,6 +32,7 @@ def delet():                                                                # de
                          '>>'))
         if dele in range(len(rd.index + 1)):
             rd = rd.drop(rd.index[dele])
+            rd.to_csv('task.csv', index=None, columns=None)
             print(rd)
             m_inp()
         else:
@@ -79,7 +83,7 @@ def m_inp():
     if m == 1:
         return meniu()
     if m == 0:
-        print('Thank you caome again')
+        print('Thank you, Goodbye')
         quit()
     else:
         return m_inp()
@@ -91,8 +95,9 @@ def meniu():
     if command1 not in range(1, 7):
         return men_inp(), command1
     if command1 == 1:
-        rd = pd.read_csv('task.csv', header=None)
-        df = rd.sort_values(by=[3])                                         # categorie
+        rd = pd.read_csv('task.csv')
+        rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+        df = rd.sort_values(by=['CATEGORIE'])                                         # categorie
         print(df)
         m_inp()
     if command1 == 2:
@@ -101,45 +106,51 @@ def meniu():
         if command2 not in range(1, 10):
             return aleg_sort(), command2
         if command2 == 1:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[0])                                     # ascending task
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["TASK"])                                     # ascending task
             print(df)
             m_inp()
         if command2 == 2:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[0], ascending=False)                    # descending task
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["TASK"], ascending=False)                    # descending task
             print(df)
             m_inp()
         if command2 == 3:
-            rd = pd.read_csv('task.csv', header=None)
-            rd[1] = pd.to_datetime(rd[1], format="%d.%m.%Y")
-            df = rd.sort_values(by=[1])                                     # ascending data
+            rd = pd.read_csv('task.csv')
+            rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
+            df = rd.sort_values(by=["DATA"])                                     # ascending data
             print(df)
             m_inp()
         if command2 == 4:
-            rd = pd.read_csv('task.csv', header=None)
-            rd[1] = pd.to_datetime(rd[1], format="%d.%m.%Y")
-            df = rd.sort_values(by=[1], ascending=False)                    # ascending data
+            rd = pd.read_csv('task.csv')
+            rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
+            df = rd.sort_values(by=["DATA"], ascending=False)                    # ascending data
             print(df)
             m_inp()
         if command2 == 5:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[2])                                     # ascending persoana
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["PERSOANA"])                                     # ascending persoana
             print(df)
             m_inp()
         if command2 == 6:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[2], ascending=False)                    # ascending persoana
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["PERSOANA"], ascending=False)                    # ascending persoana
             print(df)
             m_inp()
         if command2 == 7:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[3])                                     # ascending categorie
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["CATEGORIE"])                                     # ascending categorie
             print(df)
             m_inp()
         if command2 == 8:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[3], ascending=False)                    # ascending categorie
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["CATEGORIE"], ascending=False)                    # ascending categorie
             print(df)
             m_inp()
         if command2 == 9:
@@ -150,25 +161,45 @@ def meniu():
         if command3 not in range(1, 6):
             return filt_aleg(), command3
         if command3 == 1:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[0])                                 # only ascending task
-            print(df[0])
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["TASK"])                                 # Filter task
+            print(df["TASK"])
+            iii = input('Introdu un filtru\n> ')
+            filt = df['TASK'].str.contains(iii)
+            ps = df.loc[filt]
+            print(ps)
             m_inp()
         if command3 == 2:
-            rd = pd.read_csv('task.csv', header=None)
-            rd[1] = pd.to_datetime(rd[1], format="%d.%m.%Y")
-            df = rd.sort_values(by=[1])                                 # only ascending data
-            print(df[1])
+            rd = pd.read_csv('task.csv')
+            rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
+            df = rd.sort_values(by=["DATA"])                                # Filter data
+            print(df['DATA'])
+            rd = pd.read_csv('task.csv')
+            iii = input('Introdu un filtru\n> ')
+            filt = rd['DATA'].str.contains(iii)
+            ps = df.loc[filt]
+            print(ps)
             m_inp()
         if command3 == 3:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[2])                                 # only ascending pers
-            print(df[2])
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["PERSOANA"])                                 # Filter pers
+            print(df["PERSOANA"])
+            iii = input('Introdu un filtru\n> ')
+            filt = df['PERSOANA'].str.contains(iii)
+            ps = df.loc[filt]
+            print(ps)
             m_inp()
         if command3 == 4:
-            rd = pd.read_csv('task.csv', header=None)
-            df = rd.sort_values(by=[3])                                 # only ascending categ
-            print(df[3])
+            rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
+            df = rd.sort_values(by=["CATEGORIE"])                                 # Filter categ
+            print(df["CATEGORIE"])
+            iii = input('Introdu un filtru\n> ')
+            filt = df['CATEGORIE'].str.contains(iii)
+            ps = df.loc[filt]
+            print(ps)
             m_inp()
         if command3 == 5:
             return meniu()
@@ -262,4 +293,5 @@ def taskuri():                                                          # functi
         meniu()
 
 
-taskuri()
+if __name__ == '__main__':
+    taskuri()
