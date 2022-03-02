@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\tema27.02.22\cars\input.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\tema27.02.22\categorii.csv">
           <value>
             <Attribute>
@@ -46,13 +53,6 @@
           </value>
         </entry>
         <entry key="\test\task.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\test\temp.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
