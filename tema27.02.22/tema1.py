@@ -119,12 +119,14 @@ def meniu():
             m_inp()
         if command2 == 3:
             rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
             rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
             df = rd.sort_values(by=["DATA"])                                     # ascending data
             print(df)
             m_inp()
         if command2 == 4:
             rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
             rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
             df = rd.sort_values(by=["DATA"], ascending=False)                    # ascending data
             print(df)
@@ -172,6 +174,7 @@ def meniu():
             m_inp()
         if command3 == 2:
             rd = pd.read_csv('task.csv')
+            rd = pd.DataFrame(rd.values, columns=["TASK", "DATA", "PERSOANA", "CATEGORIE"])
             rd["DATA"] = pd.to_datetime(rd["DATA"], format="%d.%m.%Y")
             df = rd.sort_values(by=["DATA"])                                # Filter data
             print(df['DATA'])
