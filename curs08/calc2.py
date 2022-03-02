@@ -31,6 +31,5 @@ class Calculator:
 nr1 = int(input("Introduceti primul operator: "))
 nr2 = int(input("Introduceti al doilea operator: "))
 simbol_operatie = input("Introduceti tipul operatiei: ")
-
 obiect1 = Calculator(nr1, nr2, simbol_operatie)
 print(obiect1)

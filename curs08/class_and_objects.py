@@ -55,5 +55,6 @@ print(obiect1, obiect2)
 def suma(a, b):
     return a + b
 
+
 var1 = suma(1, 2)
 var2 = suma(3, 2)
