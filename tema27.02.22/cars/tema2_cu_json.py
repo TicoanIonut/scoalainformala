@@ -46,24 +46,49 @@ def data_frame():
     df.price = pd.to_numeric(df.price)                                            # numere ordonate frumos
     make_folder()
     slow_cars = df[df.hp < 120]
-    slow_cars.to_json(r'output_data\slow_cars.json')
+    slow_cars.to_json(r'output_data\slow_cars.json')            # slow cars
     fast_cars = df[(df.hp >= 120) & (df.hp < 180)]
-    fast_cars.to_json(r'output_data\fast_cars.json')
+    fast_cars.to_json(r'output_data\fast_cars.json')            # fast cars
     sport_cars = df[df.hp >= 180]
-    sport_cars.to_json(r'output_data\sport_cars.json')
+    sport_cars.to_json(r'output_data\sport_cars.json')          # sport cars
     cheap_cars = df[df.price < 1000]
-    cheap_cars.to_json(r'output_data\cheap_cars.json')
+    cheap_cars.to_json(r'output_data\cheap_cars.json')          # cheap cars
     medium_cars = df[(df.price >= 1000) & (df.hp < 5000)]
-    medium_cars.to_json(r'output_data\medium_cars.json')
+    medium_cars.to_json(r'output_data\medium_cars.json')        # medium cars
     expensive_cars = df[df.price >= 5000]
-    expensive_cars.to_json(r'output_data\expensive_cars.json')
+    expensive_cars.to_json(r'output_data\expensive_cars.json')  # expensive cars
+    # filtrare dupa brand daca se cunoaste lista
+    audi = df.sort_values(by='brand')
+    filt = audi['brand'].str.contains('Audi')
+    audi = audi.loc[filt]
+    audi.to_json(r'output_data\Audi.json')          # Audi
+    dacia = df.sort_values(by='brand')
+    filt = dacia['brand'].str.contains('Dacia')
+    dacia = dacia.loc[filt]
+    dacia.to_json(r'output_data\Dacia.json')        # Dacia
+    ford = df.sort_values(by='brand')
+    filt = ford['brand'].str.contains('Ford')
+    ford = ford.loc[filt]
+    ford.to_json(r'output_data\Ford.json')          # Ford
+    nissan = df.sort_values(by='brand')
+    filt = nissan['brand'].str.contains('Nissan')
+    nissan = nissan.loc[filt]
+    nissan.to_json(r'output_data\Nissan.json')      # Nissan
+    renault = df.sort_values(by='brand')
+    filt = renault['brand'].str.contains('Renault')
+    renault = renault.loc[filt]
+    renault.to_json(r'output_data\Renault.json')    # Renault
+    vw = df.sort_values(by='brand')
+    filt = vw['brand'].str.contains('VW')
+    vw = vw.loc[filt]
+    vw.to_json(r'output_data\VW.json')              # VW
+    # filtrare dupa input
     df = df.sort_values(by='brand')
     print(df['brand'])
     iii = input('Introdu un filtru\n> ').capitalize()
     filt = df['brand'].str.startswith(iii)
-    ps = df.loc[filt]
-    ps.to_json(r'output_data\specific_brand.json')
-    print(ps)
+    df = df.loc[filt]
+    df.to_json(r'output_data\specific_brand.json')
 
 
 if __name__ == '__main__':
