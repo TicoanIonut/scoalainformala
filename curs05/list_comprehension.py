@@ -24,5 +24,3 @@
 # lista_noua = [x if x!= 'suc' else 'apa min' for x in lista_produse]
 # #lista_noua = [x for x in lista_produse if x!= 'suc' or 'apa' ]
 # print(lista_noua)
-
-
