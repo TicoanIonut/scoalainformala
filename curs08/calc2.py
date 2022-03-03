@@ -1,9 +1,9 @@
 class Calculator:
 
-    def __init__(self, op1, op2, operation):
+    def __init__(self, op1, operation, op2):
         self.operator1 = op1
-        self.operator2 = op2
         self.operatie = operation
+        self.operator2 = op2
 
     def adunare(self):
         return self.operator1 + self.operator2
@@ -29,7 +29,7 @@ class Calculator:
 
 
 nr1 = int(input("Introduceti primul operator: "))
-nr2 = int(input("Introduceti al doilea operator: "))
 simbol_operatie = input("Introduceti tipul operatiei: ")
-obiect1 = Calculator(nr1, nr2, simbol_operatie)
+nr2 = int(input("Introduceti al doilea operator: "))
+obiect1 = Calculator(nr1, simbol_operatie, nr2)
 print(obiect1)
