@@ -6,9 +6,9 @@ dictionar = {"1": "abc", "2": "s", "3": "o", "4": "n", "5": "lm", "6": "jk", "7"
 def comb_two(dic):
     for k, v in dic.items():
         if len(v) == 2:
-            v = v, end = ''
+            print(v, end='')
             lst = [''.join(p) for p in permutations(v)]
-            return lst
+            print(lst)
 
 
 comb_two(dictionar)
