@@ -65,16 +65,21 @@ import itertools
 # print(permutations('day'))
 
 
+def mx_mn(hl):
+    mn = hl.split()
+    return min(mn) + ' ' + max(mn)
 
-coordinates = [[1,5], [10,15], [25, 35]] # sorted
 
-line = 'ATCACGTGTGTGTACACGTACGTGTGNGTNGTTGAGTGKWSGTGAAAAAKCT'
+hl = '1 2 3 4 5 6 7 8 -9'
+print(mx_mn(hl))
+ss = hl.split()
+print(ss)
 
-result = list(line)
-# opted for exclusive end pos
-for r in [range(start, end) for start, end in coordinates]:
-    for p in r:
-        result[p] = 'ccc'
+lst = [1, 2, 45, 55, 45, 2, 3, -44, 44, -8, 3, 3]
+z = max(lst, key=lst.count)
+print(z)
+pp = lst.count('iii')
+print(pp)
 
-res = ''.join(result)
-print(res)
+
+
