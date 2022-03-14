@@ -163,3 +163,79 @@
 # print(obiect_1.nume, 'nume')
 # print(obiect_1.vaccinuri, 'vaccin')
 
+# vehicul
+# vehiculdeteren
+# vehiculdetractare
+
+
+class Vehicul:
+    pass
+
+
+class VehiculTeren(Vehicul):
+    pass
+
+
+class VehiculTractare(VehiculTeren):
+    pass
+
+# Vehicul este parinte pentru VehiculTeren si VehiculTractare(indirect)
+# VehiculTeren este parinte pentru VehiculTractare
+# parintii sunt superclase pentru copii (superclass)
+
+# VehiculTractare este copil pentru VehiculTeren si Vehicul(indirect)
+# VehiculTeren este copil pentru Vehicul
+# copii se numesc subclase
+
+# print('Vehicul VehiculTeren VehiculTractare')
+# for cls1 in [Vehicul, VehiculTeren, VehiculTractare]:
+#     for cls2 in [Vehicul, VehiculTeren, VehiculTractare]:
+#         print(issubclass(cls1, cls2), end='\t')     # issubclass asfiseaza relatiile dintre 2 clase
+#    print()
+
+
+vehicul1 = Vehicul()
+vehicul_teren = VehiculTeren()
+vehicul_tractare = VehiculTractare()
+# print(isinstance(vehicul1, VehiculTeren))
+
+# print('Vehicul VehiculTeren VehiculTractare')
+# for obj in [vehicul1, vehicul_teren, vehicul_tractare]:
+#     for cls in [vehicul1, vehicul_teren, vehicul_tractare]:
+#         print(isinstance(obj, cls), end='\t')     # isinstance asfiseaza relatiile dintre 2 obiecte
+#     print()
+
+
+class Exemplu:
+
+    def __init__(self, val):
+        self.value = val
+
+    def __str__(self):
+        return f'{self.value}'
+
+
+obiect_1 = Exemplu(0)
+print(obiect_1.value, '223')
+obiect_2 = Exemplu(2)
+print(obiect_2.value, 225)
+obiect_3 = obiect_1
+obiect_1.value = 7
+print(obiect_3, obiect_1.value, '227')
+obiect_3.value += 1
+a = obiect_1.value
+b = obiect_2.value
+c = obiect_3.value
+
+# print(obiect_1 is obiect_2)
+# print(obiect_2 is obiect_3)
+# print(obiect_3 is obiect_1)
+print(obiect_1.value, obiect_2.value, obiect_3.value)
+
+# str1 = 'Maria are mere '
+# str2 = str1
+# str1 = 'www'
+# # str2 = 'Maria are mere mari'
+# # str1 += 'mari'
+#
+# print(str1 == str2, str1 is str2, str1, str2)
