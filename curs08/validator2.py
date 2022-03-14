@@ -2,7 +2,7 @@ class Validator:
     def __init__(self, cnp):
         self.CNP = cnp
 
-    def lungime(self, ):
+    def lungime(self):
         if len(self.CNP) != 13:
             return False
         return True
