@@ -4,18 +4,32 @@ class Fractii:
         self.numitor = numitor
 
     def __add__(self):
-        return self.numarator + self.numitor
+        return int(self.numarator) + int(self.numitor)
 
     def __sub__(self):
-        return self.numarator - self.numitor
+        return int(self.numarator) - int(self.numitor)
+
+    def __floordiv__(self):
+        try:
+            return int(self.numarator) / int(self.numitor)
+        except ZeroDivisionError:
+            return 'Can not divide to ZERO'
 
     def invers(self):
-        return self.numitor / self.numarator
+        try:
+            return int(self.numitor) / int(self.numarator)
+        except ZeroDivisionError:
+            return 'Can not divide to ZERO'
 
     def __str__(self):
-        return f"{self.__add__()}\n" + f"{self.__sub__()}\n" + f"{self.numarator/self.numitor}\n" + f"{self.invers()}"
+        return f"Adunare {self.__add__()}\n" + f"Scadere {self.__sub__()}\n" + \
+                f"Fractia {self.__floordiv__()}\n" + f"Inverse {self.invers()}"
 
 
-n1 = int(input('Introdu numarator '))
-n2 = int(input('Introdu numitor '))
+n1 = input('Introdu numarator ')
+while n1.isdigit() is False:
+    n1 = input('Introdu numarator ')
+n2 = input('Introdu numitor ')
+while n2.isdigit() is False:
+    n2 = input('Introdu numarator ')
 print(Fractii(n1, n2))
