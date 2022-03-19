@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="15.03.2022">
-      <change afterPath="$PROJECT_DIR$/solo_learn/regex.py" afterDir="false" />
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="19.03.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curs08/validator2.py" beforeDir="false" afterPath="$PROJECT_DIR$/curs08/validator2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/exercitii extra/validator cnp.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercitii extra/validator cnp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solo_learn/regex.py" beforeDir="false" afterPath="$PROJECT_DIR$/solo_learn/regex.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
-  <component name="RunManager" selected="Python.regex">
+  <component name="RunManager" selected="Python.validator cnp">
     <configuration name="decoratori" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -157,9 +159,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.validator cnp" />
         <item itemvalue="Python.regex" />
         <item itemvalue="Python.validator2" />
-        <item itemvalue="Python.validator cnp" />
         <item itemvalue="Python.decoratori" />
         <item itemvalue="Python.mosteniri2" />
       </list>
@@ -216,7 +218,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647460730856</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="19.03.2022">
+      <created>1647700236222</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1647700236222</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,6 +243,7 @@
     <MESSAGE value="13.03.2022" />
     <MESSAGE value="14.03.2022" />
     <MESSAGE value="15.03.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="15.03.2022" />
+    <MESSAGE value="19.03.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="19.03.2022" />
   </component>
 </project>
