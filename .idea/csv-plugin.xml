@@ -10,6 +10,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\solo_learn\ca-covid.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\tema27.02.22\cars\input.csv">
           <value>
             <Attribute>
