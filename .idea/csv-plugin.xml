@@ -24,6 +24,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\tema27.02.22\categorii.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\tema27.02.22\task.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
