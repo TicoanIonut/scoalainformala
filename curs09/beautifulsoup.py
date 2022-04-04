@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import openpyxl
+# import openpyxl
 r = requests.get('https://www.bnr.ro/Cursul-de-schimb--7372.aspx')
 link = BeautifulSoup(r.text, 'html.parser')
 title = link.find_all('div', attrs={'class': 'contentDiv'})
