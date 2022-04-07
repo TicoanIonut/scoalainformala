@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="02.04.2022">
-      <change afterPath="$PROJECT_DIR$/curs09/BNR_ALL_DATA.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/curs09/emag.py" afterDir="false" />
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="05.04.2022">
+      <change afterPath="$PROJECT_DIR$/curs09/pandas_exercitii.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/curs09/test.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/teme_curs_09/scraping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curs09/CursBNR.csv" beforeDir="false" afterPath="$PROJECT_DIR$/curs09/CursBNR.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curs09/CursBNR.xls" beforeDir="false" afterPath="$PROJECT_DIR$/curs09/CursBNR.xls" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/curs09/beautifulsoup.py" beforeDir="false" afterPath="$PROJECT_DIR$/curs09/beautifulsoup.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tema27.02.22/categorii.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tema27.02.22/categorii.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tema27.02.22/task.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tema27.02.22/task.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +60,7 @@
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\curs08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.emag">
+  <component name="RunManager" selected="Python.test">
     <configuration name="BNR_ALL_DATA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -84,49 +82,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="beautifulsoup" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scoalainformala" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/beautifulsoup.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="emag" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scoalainformala" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/emag.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="simple_game" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="matplotlib" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -138,7 +94,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solo_learn/simple_game.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solo_learn/matplotlib.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -147,7 +103,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="tema1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pandas_exercitii" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -155,11 +111,53 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tema27.02.22" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tema27.02.22/tema1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/pandas_exercitii.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scraping" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="scoalainformala" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/teme_curs_09" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teme_curs_09/scraping.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="scoalainformala" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -170,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.emag" />
+        <item itemvalue="Python.test" />
         <item itemvalue="Python.BNR_ALL_DATA" />
-        <item itemvalue="Python.beautifulsoup" />
-        <item itemvalue="Python.tema1" />
-        <item itemvalue="Python.simple_game" />
+        <item itemvalue="Python.scraping" />
+        <item itemvalue="Python.pandas_exercitii" />
+        <item itemvalue="Python.matplotlib" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +276,14 @@
       <option name="project" value="LOCAL" />
       <updated>1648922799279</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="05.04.2022">
+      <created>1649098578712</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1649098578712</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,6 +306,7 @@
     <MESSAGE value="22.03.2022" />
     <MESSAGE value="23.03.2022" />
     <MESSAGE value="02.04.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="02.04.2022" />
+    <MESSAGE value="05.04.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="05.04.2022" />
   </component>
 </project>
