@@ -10,9 +10,14 @@
 # inc = 0
 # print(increment(s, 6))
 
-count = 20
+# count = 20
+# url = "http://example20.com/"
+# while count < 28:
+#     count += 1
+#     z = url.replace('20', str(count))
+#     print(z)
+
 url = "http://example20.com/"
-while count < 28:
-    count += 1
+for count in range(20, 28):
     z = url.replace('20', str(count))
     print(z)
