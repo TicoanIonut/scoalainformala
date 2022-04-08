@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="05.04.2022">
-      <change afterPath="$PROJECT_DIR$/curs09/pandas_exercitii.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/curs09/test.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/teme_curs_09/scraping.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/csv-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/csv-plugin.xml" afterDir="false" />
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="07.04.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/solo_learn/matplotlib.py" beforeDir="false" afterPath="$PROJECT_DIR$/solo_learn/matplotlib_ex.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teme_curs_09/datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teme_curs_09/scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/scraping.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,8 +50,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="exceleditor.install" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Hello World" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Python" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -61,7 +59,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.test">
-    <configuration name="BNR_ALL_DATA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="datas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -69,11 +67,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/teme_curs_09" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/BNR_ALL_DATA.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teme_curs_09/datas.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,7 +80,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="matplotlib" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="matplotlib_ex" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -94,7 +92,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solo_learn/matplotlib.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solo_learn/matplotlib_ex.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -103,7 +101,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="pandas_exercitii" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="pd" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -111,11 +109,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/solo_learn" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/pandas_exercitii.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/solo_learn/pd.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,10 +167,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.BNR_ALL_DATA" />
+        <item itemvalue="Python.datas" />
+        <item itemvalue="Python.pd" />
+        <item itemvalue="Python.matplotlib_ex" />
         <item itemvalue="Python.scraping" />
-        <item itemvalue="Python.pandas_exercitii" />
-        <item itemvalue="Python.matplotlib" />
       </list>
     </recent_temporary>
   </component>
@@ -283,7 +281,21 @@
       <option name="project" value="LOCAL" />
       <updated>1649098578712</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="07.04.2022">
+      <created>1649351861947</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1649351861947</updated>
+    </task>
+    <task id="LOCAL-00016" summary="07.04.2022">
+      <created>1649352022770</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1649352022770</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -307,6 +319,7 @@
     <MESSAGE value="23.03.2022" />
     <MESSAGE value="02.04.2022" />
     <MESSAGE value="05.04.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="05.04.2022" />
+    <MESSAGE value="07.04.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="07.04.2022" />
   </component>
 </project>
