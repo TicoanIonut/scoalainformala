@@ -10,6 +10,34 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\curs09\exemplu.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\curs09\test.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\curs09\test1.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\curs09\test2.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\solo_learn\ca-covid.csv">
           <value>
             <Attribute>
@@ -32,6 +60,13 @@
           </value>
         </entry>
         <entry key="\tema27.02.22\task.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\teme_curs_09\Covid.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />

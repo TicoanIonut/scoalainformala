@@ -1,5 +1,5 @@
 import pandas as pd
-import matplotlib as pl
+import matplotlib.pyplot as pl
 
 df = pd.read_csv("https://www.sololearn.com/uploads/ca-covid.csv")
 df.drop('state', axis=1, inplace=True)
