@@ -12,7 +12,7 @@ browser = webdriver.Chrome(ChromeDriverManager().install())
 for ele in lll:
     browser.get(ele)
     print(ele)
-table = browser.find_element(by=By.XPATH, value='//*[@id="post-25121"]/div/div/table[1]')
+table = browser.find_element(by=By.XPATH, value='//table[1]')
 print(table)
     # table_text = table.text
     # print(table_text)
