@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="10.04.2022">
-      <change afterPath="$PROJECT_DIR$/nume_proiect/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/Lib/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/Lib/site-packages/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/Lib/site-packages/pkg_resources/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/Lib/site-packages/pkg_resources/tests/data/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/Lib/site-packages/pkg_resources/tests/data/my-test-package-source/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nume_proiect/path_to_new_env/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teme_curs_09/Covid.csv" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/Covid.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teme_curs_09/datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teme_curs_09/scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/scraping.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

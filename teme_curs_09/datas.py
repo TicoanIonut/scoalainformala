@@ -53,25 +53,23 @@ ddd = dict(zip(one, due))
 dall = {}
 for d in [ddict, ddd]:
 	dall.update(d)
-# for k, v in dall.items():
-# 	for i in v:
-# 		r1 = i.replace(' ', '')
-# 		r2 = r1.replace('b', '')
-# 		r3 = r2.replace(':', '0')
-# 		r3 = int(r3)
 df = pd.DataFrame(dall)
 # df = df.T
+df.replace(r'[a-zA-Z%]', '', regex=True, inplace=True)
+for i in df.columns:
+	if df[i].dtype == 'object':
+		df[i] = df[i].map(str.strip)
+	else:
+		pass
 df.replace(': ', '0 ', inplace=True)
 df.replace(':', '0 ', inplace=True)
-# df[0] = df[0].str.replace(' ', '')
-df['CH'] = df['CH'].str.replace(' b', '')
-# df = df["UK"].mean()
+df.apply(pd.to_numeric)
 print(df)
+
 # df.plot(kind='scatter', x='AL', y='BE')
 # plt.show()
 # df['AT'].plot(kind='hist')
 # plt.show()
-
 
 # df.to_csv('ceva')
 # print(df.describe())
@@ -94,11 +92,9 @@ print(df)
 #
 # print(get_country_by_data(dall, 'RO'))
 
-# def perfrorm_average_country(x):
-#     df = pd.DataFrame(dall)
-#     x = int(x)
-#     df = df[x].median()
-#     return df
+# def perfrorm_average_country(y, x):
+# 	y = df[x].mean()
+# 	return y
 #
 #
-# print(perfrorm_average_country('UK'))
+# print(perfrorm_average_country(df, 'UK'))
