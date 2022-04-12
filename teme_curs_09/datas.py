@@ -55,46 +55,44 @@ for d in [ddict, ddd]:
 	dall.update(d)
 df = pd.DataFrame(dall)
 # df = df.T
-df.replace(r'[a-zA-Z%]', '', regex=True, inplace=True)
-for i in df.columns:
-	if df[i].dtype == 'object':
-		df[i] = df[i].map(str.strip)
-	else:
-		pass
-df.replace(': ', '0 ', inplace=True)
-df.replace(':', '0 ', inplace=True)
+df.replace(r'[a-zA-Z]|[\s]', '', regex=True, inplace=True)
+df.replace(':', 0, inplace=True)
 df.apply(pd.to_numeric)
+df = df.astype(float)
+# df.loc['mean'] = df.mean(axis=0)                       # average all append
+# df = df.T
 print(df)
-
-# df.plot(kind='scatter', x='AL', y='BE')
+# plt.scatter(df.AL.mean(), df.AT.mean())
 # plt.show()
-# df['AT'].plot(kind='hist')
+# df.plot.scatter(x='AL', y='AT')
+# plt.show()
+# df['RO'].plot.hist()                                # histograma
 # plt.show()
 
-# df.to_csv('ceva')
-# print(df.describe())
+# df.to_csv('ceva')                                       # df to csv
+# print(df.describe())                                    # describe
 
 
 # def get_year_data(x, y):
-#      df = pd.DataFrame(x)
-#      df = df.T
-#      df = df[y]
-#      return df
+# 	df = pd.DataFrame(x)
+# 	df = df.T
+# 	df = df[y]
+# 	return df
 #
 #
 # print(get_year_data(dall, 8))
 
 # def get_country_by_data(x, y):
-#     df = pd.DataFrame(x)
-#     df = df['Country'] + df[y]
-#     return df
+# 	df = pd.DataFrame(x)
+# 	df = df['Country'] + df[y]
+# 	return df
 #
 #
 # print(get_country_by_data(dall, 'RO'))
 
-# def perfrorm_average_country(y, x):
+# def perfrorm_average_country(x):
 # 	y = df[x].mean()
 # 	return y
 #
 #
-# print(perfrorm_average_country(df, 'UK'))
+# print(perfrorm_average_country('RO'))

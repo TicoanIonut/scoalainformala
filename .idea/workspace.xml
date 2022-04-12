@@ -165,9 +165,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.datas" />
-        <item itemvalue="Python.scraping" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.pandas_exercitii" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.scraping" />
         <item itemvalue="Python.pd" />
       </list>
     </recent_temporary>
@@ -307,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649621699834</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="10.04.2022">
+      <created>1649706419960</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1649706419960</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
