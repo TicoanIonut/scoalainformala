@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<a class="btn btn-success" href="{% url 'locations:adauga' %}">Adauga locatie</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Index</th>
+        <th>City</th>
+        <th>Country</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for item in location_list %}
+    <tr>
+        <td>{{ forloop.counter }}</td>
+        <td>{{ item.city }}</td>
+        <td>{{ item.country }}</td>
+        <td></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

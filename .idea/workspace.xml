@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="10.04.2022">
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="12.04.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/teme_curs_09/datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +55,7 @@
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\curs08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.datas">
+  <component name="RunManager" selected="Python.scraping">
     <configuration name="datas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -164,10 +163,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.scraping" />
         <item itemvalue="Python.datas" />
         <item itemvalue="Python.pandas_exercitii" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.scraping" />
         <item itemvalue="Python.pd" />
       </list>
     </recent_temporary>
@@ -314,7 +313,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649706419960</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="12.04.2022">
+      <created>1649785199268</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1649785199268</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -341,6 +347,7 @@
     <MESSAGE value="07.04.2022" />
     <MESSAGE value="08.04.2022" />
     <MESSAGE value="10.04.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="10.04.2022" />
+    <MESSAGE value="12.04.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="12.04.2022" />
   </component>
 </project>
