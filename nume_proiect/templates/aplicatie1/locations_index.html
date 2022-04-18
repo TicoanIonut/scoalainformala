@@ -7,16 +7,29 @@
         <th>Index</th>
         <th>City</th>
         <th>Country</th>
+        <th>Stare</th>
         <th>Actions</th>
     </tr>
     </thead>
     <tbody>
-    {% for item in location_list %}
+    {% for item in locations %}
     <tr>
         <td>{{ forloop.counter }}</td>
         <td>{{ item.city }}</td>
         <td>{{ item.country }}</td>
-        <td></td>
+        <td>{% if item.active == 1 %}
+                            <span>Activ</span>
+                        {% else %}
+                        <span>Inactiv</span>
+                        {% endif %}
+                    </td>
+        <td><a href="{% url 'locations:modifica' item.id %}" class="btn btn-success">Modifica</a>
+        {% if item.active == 1 %}
+                        <a href="{% url 'locations:sterge' item.id %}" class="btn btn-danger">Sterge</a>
+                    {% else %}
+                        <a href="{% url 'locations:activeaza' item.id %}" class="btn btn-info">Activeaza</a>
+                    {% endif %}
+        </td>
     </tr>
     {% endfor %}
     </tbody>
