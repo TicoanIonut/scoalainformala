@@ -12,5 +12,5 @@ urlpatterns = [
 	path('<int:pk>/activeaza/', views.activate_location, name='activeaza'),
 	path('locatii_inactive', views.LocationInactiveView.as_view(), name='locatii_inactive'),
 	path('locatii_toate', views.LocationAllView.as_view(), name='locatii_toate'),
-	
+
 ]
