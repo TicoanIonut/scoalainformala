@@ -4,7 +4,6 @@ from django.shortcuts import redirect
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView
 
-from aplicatie1.models import Location
 from aplicatie2.models import Companies
 
 
@@ -14,10 +13,10 @@ class CompanyView(LoginRequiredMixin, ListView):
 	
 	def get_context_data(self, *args, **kwargs):
 		data = super(CompanyView, self).get_context_data(*args, **kwargs)
-		data['locations'] = self.model.objects.filter(active=1)
+		data['companies'] = self.model.objects.filter(active=1)
 		return data
-	
-	
+
+
 class CreateCompanyView(LoginRequiredMixin, CreateView):
 	model = Companies
 	fields = ['name', 'company_type', 'website', 'active']
@@ -25,7 +24,7 @@ class CreateCompanyView(LoginRequiredMixin, CreateView):
 	
 	def get_success_url(self):
 		return reverse('companies:listare')
-	
+
 
 class UpdateCompanyView(LoginRequiredMixin, UpdateView):
 	model = Companies
@@ -34,15 +33,35 @@ class UpdateCompanyView(LoginRequiredMixin, UpdateView):
 	
 	def get_success_url(self):
 		return reverse('companies:listare')
-	
-	
+
+
 @login_required
 def delete_company(request, pk):
-	Location.objects.filter(id=pk).update(active=0)
+	Companies.objects.filter(id=pk).update(active=0)
 	return redirect('companies:listare')
 
 
 @login_required
 def activate_company(request, pk):
-	Location.objects.filter(id=pk).update(active=1)
+	Companies.objects.filter(id=pk).update(active=1)
 	return redirect('companies:listare')
+
+
+class CompaniesInactiveView(LoginRequiredMixin, ListView):
+	model = Companies
+	template_name = 'aplicatie2/Companies_index.html'
+	
+	def get_context_data(self, *args, **kwargs):
+		data = super(CompaniesInactiveView, self).get_context_data(*args, **kwargs)
+		data['companies'] = self.model.objects.filter(active=0)
+		return data
+
+
+class CompaniesAllView(LoginRequiredMixin, ListView):
+	model = Companies
+	template_name = 'aplicatie2/Companies_index.html'
+	
+	def get_context_data(self, *args, **kwargs):
+		data = super(CompaniesAllView, self).get_context_data(*args, **kwargs)
+		data['companies'] = self.model.objects.filter()
+		return data
