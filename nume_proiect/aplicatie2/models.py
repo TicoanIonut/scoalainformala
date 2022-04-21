@@ -10,4 +10,4 @@ class Companies(models.Model):
 	active = models.BooleanField(default=1)
 	
 	def __str__(self):
-		return f'{self.name} - {self.company_type} - {self.website}'
+		return f'{self.name} - {self.company_type}'
