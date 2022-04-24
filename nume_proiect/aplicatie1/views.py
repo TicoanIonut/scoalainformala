@@ -1,7 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import redirect
-# Create your views here.
 from django.urls import reverse
 from django.views.generic import ListView, CreateView, UpdateView
 
@@ -20,7 +19,6 @@ class Locationsview(LoginRequiredMixin, ListView):
 
 class CreateLocationView(LoginRequiredMixin, CreateView):
 	model = Location
-	# fields = '__all__'
 	fields = ['city', 'country']
 	template_name = 'aplicatie1/location_form.html'
 	
