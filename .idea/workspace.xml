@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="18.04.2022">
-      <change afterPath="$PROJECT_DIR$/curs08/oop.py" afterDir="false" />
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="24.04.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -328,7 +327,14 @@
       <option name="project" value="LOCAL" />
       <updated>1650297457023</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="24.04.2022">
+      <created>1650807389426</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1650807389426</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,6 +363,7 @@
     <MESSAGE value="10.04.2022" />
     <MESSAGE value="12.04.2022" />
     <MESSAGE value="18.04.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.04.2022" />
+    <MESSAGE value="24.04.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="24.04.2022" />
   </component>
 </project>
