@@ -11,6 +11,8 @@
             <nav>
                 <a class="btn" href="/admin">Admin</a>
                 {% if request.user.is_authenticated %}
+                <a class="btn" href="{% url 'userprofile:utilizator_nou' %}">Adaugare utilizator</a>
+                <br>
                 <a class="btn" href="{% url 'locations:lista_locatii' %}">Locatii active</a>
                 <a class="btn" href="{% url 'locations:locatii_inactive' %}">Locatii inactive</a>
                 <a class="btn" href="{% url 'locations:locatii_toate' %}">Locatii toate</a>
@@ -23,6 +25,7 @@
         </div>
     </div>
 </div>
+<br>
 {% block content %}
 {% endblock %}
 </body>

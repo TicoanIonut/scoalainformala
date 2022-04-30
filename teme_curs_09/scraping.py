@@ -39,7 +39,7 @@ for day in range(20, 28):
                     float(incidenta.replace(",", ".")),
                 )
             )
-
+print(lista_dates)
 lista_cu_randuri_finale = []
 for jud, valori in date.items():
     cazuri_confirmate = sum([val[0] for val in valori])
