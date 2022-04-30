@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="24.04.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/curs08/oop.py" beforeDir="false" afterPath="$PROJECT_DIR$/curs08/oop.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/teme_curs_09/scraping.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/scraping.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +57,7 @@
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\curs08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.matplotlib_ex">
+  <component name="RunManager" selected="Python.scraping">
     <configuration name="datas" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -163,9 +165,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.matplotlib_ex" />
         <item itemvalue="Python.scraping" />
         <item itemvalue="Python.datas" />
+        <item itemvalue="Python.matplotlib_ex" />
         <item itemvalue="Python.pandas_exercitii" />
         <item itemvalue="Python.test" />
       </list>
