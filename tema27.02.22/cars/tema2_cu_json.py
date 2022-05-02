@@ -43,7 +43,7 @@ def data_frame():
     df = pd.DataFrame(df.values, columns=["id", "brand", "model", "hp", "price"])   # lista frumoasa
     df = df.drop(df.index[0])                                                       # drop ce nu imi trebuie
     df.hp = pd.to_numeric(df.hp)
-    df.price = pd.to_numeric(df.price)                                            # numere ordonate frumos
+    df.__price = pd.to_numeric(df.__price)                                            # numere ordonate frumos
     make_folder()
     slow_cars = df[df.hp < 120]
     slow_cars.to_json(r'output_data\slow_cars.json')            # slow cars
@@ -51,11 +51,11 @@ def data_frame():
     fast_cars.to_json(r'output_data\fast_cars.json')            # fast cars
     sport_cars = df[df.hp >= 180]
     sport_cars.to_json(r'output_data\sport_cars.json')          # sport cars
-    cheap_cars = df[df.price < 1000]
+    cheap_cars = df[df.__price < 1000]
     cheap_cars.to_json(r'output_data\cheap_cars.json')          # cheap cars
-    medium_cars = df[(df.price >= 1000) & (df.hp < 5000)]
+    medium_cars = df[(df.__price >= 1000) & (df.hp < 5000)]
     medium_cars.to_json(r'output_data\medium_cars.json')        # medium cars
-    expensive_cars = df[df.price >= 5000]
+    expensive_cars = df[df.__price >= 5000]
     expensive_cars.to_json(r'output_data\expensive_cars.json')  # expensive cars
     # filtrare dupa brand daca se cunoaste lista
     audi = df.sort_values(by='brand')
