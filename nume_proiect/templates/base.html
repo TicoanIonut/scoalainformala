@@ -20,6 +20,12 @@
                 <a class="btn" href="{% url 'companies:companies_inactive' %}">Companii inactive</a>
                 <a class="btn" href="{% url 'companies:companies_toate' %}">Companii toate</a>
                 <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    {% if ready_to_work is False %}
+                        <a href="{% url 'userprofile:stop_pontaj' %}" class="btn btn-danger">Oprire pontaj</a>
+                    {% else %}
+                        <a href="{% url 'userprofile:start_pontaj' %}" class="btn btn-success">Pornire pontaj</a>
+                    {% endif %}
+                <span>Hi, {{ request.user.username|upper }}</span>
                 {% endif %}
             </nav>
         </div>
