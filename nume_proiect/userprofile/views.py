@@ -1,14 +1,19 @@
+import datetime
 import random
 import string
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
 from django.core.mail import EmailMultiAlternatives
+from django.http import HttpResponseRedirect
 from django.template.loader import render_to_string
 from django.urls import reverse
 from django.views.generic import CreateView
 
 from userprofile.forms import NewAccountForm
+from userprofile.models import Pontaj
+
 punctuation = '!$%?#@'
 
 
@@ -41,4 +46,15 @@ class CreateNewAccount(LoginRequiredMixin, CreateView):
 			email.attach_alternative(msg_html, 'text/html')
 			email.send()
 		return reverse('locations:lista_locatii')
-	
+
+
+@login_required
+def new_timesheet(request):
+	Pontaj.objects.create(user_id=request.user.id, start_date=datetime.datetime.now())
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+@login_required
+def stop_timesheet(request):
+	Pontaj.objects.filter(user_id=request.user.id, end_date=None).update(end_date=datetime.datetime.now())
+	return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
