@@ -38,13 +38,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\freecodecamp\items.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\solo_learn\ca-covid.csv">
           <value>
             <Attribute>
