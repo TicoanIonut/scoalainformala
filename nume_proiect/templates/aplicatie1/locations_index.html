@@ -14,7 +14,7 @@
     <tbody>
     {% for item in locations %}
     <tr>
-        <td>{{ forloop.counter }}</td>
+        <td>{{ forloop.counter0|add:page_obj.start_index }}</td>
         <td>{{ item.city }}</td>
         <td>{{ item.country }}</td>
         <td>{% if item.active == 1 %}
@@ -34,4 +34,27 @@
     {% endfor %}
     </tbody>
 </table>
+{% if is_paginated %}
+<ul class="pagination">
+    {% if page_obj.has_previous %}
+    <li><a class="btn" href="?page={{ page_obj.previous_page_number }}"><<</a></li>
+    {% else %}
+    <li class="disabled btn"><span><<</span></li>
+    {% endif %}
+    {% for i in paginator.page_range %}
+    {% if page_obj.number == i %}
+    <li class="active btn btn-info"><span>{{ i }}<span class="sr-only">(curent)</span></span></li>
+    {% else %}
+    <li><a class="btn" href="?page={{ i }}">{{ i }}</a></li>
+    {% endif %}
+    {% endfor %}
+    {% if page_obj.has_next %}
+    <li><a class="btn" href="?page={{ page_obj.next_page_number }}">>></a></li>
+    {% else %}
+    <li class="disabled btn"><span>>></span></li>
+    {% endif %}
+    <span class="align-right">Showing {{ page_obj.start_index }} - {{ page_obj.end_index }} of
+            {{ page_obj.paginator.count }}</span>
+</ul>
+{% endif %}
 {% endblock %}
