@@ -14,3 +14,7 @@ def cos(request):
 def comanda(request):
 	contain = {}
 	return render(request, 'magazin/comanda.html', contain)
+
+
+def chat(request):
+	return render(request, 'magazin/chat.html')
