@@ -10,10 +10,13 @@ from aplicatie2.models import Companies
 class CompanyView(LoginRequiredMixin, ListView):
 	model = Companies
 	template_name = 'aplicatie2/Companies_index.html'
+	paginate_by = 5
+	queryset = model.objects.filter(active=1)
+	context_object_name = 'companies'
 	
 	def get_context_data(self, *args, **kwargs):
 		data = super(CompanyView, self).get_context_data(*args, **kwargs)
-		data['companies'] = self.model.objects.filter(active=1)
+		# data['companies'] = self.model.objects.filter(active=1)
 		return data
 
 
@@ -50,18 +53,24 @@ def activate_company(request, pk):
 class CompaniesInactiveView(LoginRequiredMixin, ListView):
 	model = Companies
 	template_name = 'aplicatie2/Companies_index.html'
+	paginate_by = 5
+	queryset = model.objects.filter(active=0)
+	context_object_name = 'companies'
 	
 	def get_context_data(self, *args, **kwargs):
 		data = super(CompaniesInactiveView, self).get_context_data(*args, **kwargs)
-		data['companies'] = self.model.objects.filter(active=0)
+		# data['companies'] = self.model.objects.filter(active=0)
 		return data
 
 
 class CompaniesAllView(LoginRequiredMixin, ListView):
 	model = Companies
 	template_name = 'aplicatie2/Companies_index.html'
+	paginate_by = 5
+	queryset = model.objects.filter()
+	context_object_name = 'companies'
 	
 	def get_context_data(self, *args, **kwargs):
 		data = super(CompaniesAllView, self).get_context_data(*args, **kwargs)
-		data['companies'] = self.model.objects.filter()
+		# data['companies'] = self.model.objects.filter()
 		return data
