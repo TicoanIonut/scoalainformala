@@ -22,7 +22,7 @@ class CompanyView(LoginRequiredMixin, ListView):
 
 class CreateCompanyView(LoginRequiredMixin, CreateView):
 	model = Companies
-	fields = ['name', 'company_type', 'website', 'active']
+	fields = ['name', 'company_type', 'website', 'active', 'locations']
 	template_name = 'aplicatie2/Company_form.html'
 	
 	def get_success_url(self):
