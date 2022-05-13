@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from .models import *
 
 
 def magazin(request):
-	contain = {}
+	produse = Produs.objects.all()
+	contain = {'produse': produse}
 	return render(request, 'magazin/magazin.html', contain)
 
 
@@ -18,3 +20,9 @@ def comanda(request):
 
 def chat(request):
 	return render(request, 'magazin/chat.html')
+	
+	
+# def login(request):
+# 	return render(request, 'magazin/login.html')
+
+
