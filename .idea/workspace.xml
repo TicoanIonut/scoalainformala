@@ -2,10 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="02.05.2022">
+      <change afterPath="$PROJECT_DIR$/magazin_online/magazin/templates/registration/invite_user.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/magazin/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin_online/utilizatori/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nume_proiect/logs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nume_proiect/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/nume_proiect/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nume_proiect/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/nume_proiect/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/magazin/templates/magazin/magazin.html" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/magazin/templates/magazin/magazin.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/magazin/templates/magazin/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/magazin/templates/magazin/main.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/magazin_online/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/magazin_online/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/magazin_online/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/magazin_online/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/static/css/main.css" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +78,7 @@
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\curs08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.test2">
     <configuration name="OpenCV_camera" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -127,27 +142,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="oop" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="scoalainformala" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\2dor\PycharmProjects\scoalainformala\freecodecamp\oop.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,13 +163,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="scoalainformala" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/test2.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.test2" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.OpenCV_camera" />
         <item itemvalue="Python.oop (2)" />
         <item itemvalue="Python.oop (1)" />
-        <item itemvalue="Python.oop" />
       </list>
     </recent_temporary>
   </component>
@@ -418,5 +433,16 @@
     <MESSAGE value="01.05.2022" />
     <MESSAGE value="02.05.2022" />
     <option name="LAST_COMMIT_MESSAGE" value="02.05.2022" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

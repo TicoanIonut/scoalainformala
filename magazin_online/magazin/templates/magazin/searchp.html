@@ -1,0 +1,15 @@
+{% extends 'magazin/main.html' %}
+{% load static %}
+{% block content %}
+<center>
+    {% if cauta %}
+    <h1>Ati cautat {{ cauta }}</h1>
+    <br/>
+    {% for produs in produse %}
+    {{ produs }} <br/>
+    {% endfor %}
+    {% else %}
+    <h1> Ati uitat sa scrieti ce cautati</h1>
+    {% endif %}
+</center>
+{% endblock %}
