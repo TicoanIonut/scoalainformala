@@ -7,4 +7,6 @@ urlpatterns = [
 	path('comanda/', views.comanda, name='comanda'),
 	path('chat/', views.chat, name='chat'),
 	path('login/', views.cos, name='login'),
+	path('searchp/', views.searchp, name='searchp'),
+	
 ]
