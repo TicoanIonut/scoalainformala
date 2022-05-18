@@ -6,7 +6,7 @@
     <h1>Ati cautat {{ cauta }}</h1>
     <br/>
     {% for produs in produse %}
-    {{ produs }} <br/>
+        {{ produs }} - {{ produs.price }}
     {% endfor %}
     {% else %}
     <h1> Ati uitat sa scrieti ce cautati</h1>

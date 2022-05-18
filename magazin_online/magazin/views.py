@@ -4,13 +4,11 @@ from django.core.paginator import Paginator
 
 
 def magazin(request):
-	# produse = Produs.objects.all()
-	# contain = {'produse': produse}
 	p = Paginator(Produs.objects.all().order_by('name'), 6)
 	page = request.GET.get('page')
 	produse_paginate = p.get_page(page)
-	contain2 = {'produse_paginate': produse_paginate}
-	return render(request, 'magazin/magazin.html', contain2)
+	contain = {'produse_paginate': produse_paginate}
+	return render(request, 'magazin/magazin.html', contain)
 
 
 def cos(request):
@@ -34,7 +32,18 @@ def searchp(request):
 	if request.method == 'POST':
 		cauta = request.POST['cauta']
 		produse = Produs.objects.filter(name__contains=cauta)
-		return render(request, 'magazin/searchp.html', {'cauta': cauta}, {'produse': produse})
+		contain = {'cauta': cauta, 'produse': produse}
+		return render(request, 'magazin/searchp.html', contain)
 	else:
 		return render(request, 'magazin/searchp.html')
+
+# def searchp(request):
+# 	if 'q' in request.GET:
+# 		q = request.GET['q']
+# 		data = Produs.objects.filter(name__contains=q)
+# 	else:
+# 		data = Produs.objects.all()
+# 	contain = {'data': data}
+# 	return  render(request, 'magazin/searchp.html', contain)
+
 
