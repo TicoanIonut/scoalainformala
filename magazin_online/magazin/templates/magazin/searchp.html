@@ -5,11 +5,27 @@
     {% if cauta %}
     <h1>Ati cautat {{ cauta }}</h1>
     <br/>
-    {% for produs in produse %}
-        {{ produs }} - {{ produs.price }}
-    {% endfor %}
-    {% else %}
-    <h1> Ati uitat sa scrieti ce cautati</h1>
-    {% endif %}
+    <div class="container">
+
+        <div class="row">
+            {% for produs in produse %}
+            <div class="col-lg-4">
+                <img class="thumbnail" src="{{produs.imagine.url}}"
+                     style="object-fit: cover; object-fit: contain; background-color: #fff;">
+                <div class="box-element product" style="background-color: #fff;">
+                    <h6><strong>{{produs.name}}</strong></h6>
+                    <hr>
+                    <button class="btn btn-outline-secondary add-btn">Aauga in cos</button>
+                    <a class="btn btn-outline-info" href="#">Vezi</a>
+                    <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <h1> Ati uitat sa scrieti ce cautati</h1>
+        {% endif %}
+    </div>
 </center>
+
 {% endblock %}

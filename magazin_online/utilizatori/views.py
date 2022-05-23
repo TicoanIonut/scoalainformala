@@ -32,14 +32,24 @@ class CreateNewAccount(LoginRequiredMixin, CreateView):
 		return super(CreateNewAccount, self).form_invalid(form)
 	
 	def get_success_url(self):
-		psw = ''.join(
-			random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + punctuation)
-			for _ in range(8))
+		# psw = ''.join(
+		# 	random.SystemRandom().choice(string.ascii_uppercase + string.ascii_lowercase + string.digits + punctuation)
+		# 	for _ in range(8))
+		# if User.objects.filter(id=self.object.id).exists():
+		# 	user_instance = User.objects.get(id=self.object.id)
+		# 	user_instance.set_password(psw)
+		# 	user_instance.save()
+		# 	content = f'Datele de autentificare sunt: \n username: {user_instance.username} \n password: {psw}'
+		# 	msg_html = render_to_string('registration/invite_user.html', {'content_email': content})
+		# 	email = EmailMultiAlternatives(subject='Invitatie utilizator',
+		# 	                               body=content, from_email='contact@test.ro', to=[user_instance.email])
+		# 	email.attach_alternative(msg_html, 'text/html')
+		# 	email.send()
 		if User.objects.filter(id=self.object.id).exists():
 			user_instance = User.objects.get(id=self.object.id)
-			user_instance.set_password(psw)
+			user_instance.set_password()
 			user_instance.save()
-			content = f'Datele de autentificare sunt: \n username: {user_instance.username} \n password: {psw}'
+			content = f'Datele de autentificare sunt: \n username: {user_instance.username}\n password: {user_instance.set_password}'
 			msg_html = render_to_string('registration/invite_user.html', {'content_email': content})
 			email = EmailMultiAlternatives(subject='Invitatie utilizator',
 			                               body=content, from_email='contact@test.ro', to=[user_instance.email])
