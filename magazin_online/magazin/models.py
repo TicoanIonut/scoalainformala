@@ -14,7 +14,6 @@ class Client(models.Model):
 class Produs(models.Model):
 	name = models.CharField(max_length=200, null=True)
 	price = models.FloatField()
-	digital = models.BooleanField(default=False, null=True, blank=False)
 	imagine = models.ImageField(null=True,)
 	
 	def __str__(self):
@@ -30,6 +29,18 @@ class Comanda(models.Model):
 	def __str__(self):
 		return str(self.id)
 	
+	@property
+	def cos_total(self):
+		comandaitems = self.comandaitem_set.all()
+		total = sum([item.total for item in comandaitems])
+		return total
+
+	@property
+	def cos_items(self):
+		comandaitems = self.comandaitem_set.all()
+		total = sum([item.get_cantitate for item in comandaitems])
+		return total
+
 	
 class ComandaProdus(models.Model):
 	produs = models.ForeignKey(Produs, on_delete=models.SET_NULL, blank=True, null=True)
@@ -37,6 +48,11 @@ class ComandaProdus(models.Model):
 	cantitate = models.IntegerField(default=0, null=True, blank=True)
 	data_adaugarii = models.DateTimeField(auto_now_add=True)
 	
+	@property
+	def total(self):
+		total = self.produs.price * self.cantitate
+		return total
+
 	
 class AdresaComanda(models.Model):
 	client = models.ForeignKey(Client, on_delete=models.SET_NULL, blank=True, null=True)
