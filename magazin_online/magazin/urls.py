@@ -6,7 +6,7 @@ urlpatterns = [
 	path('cos/', views.cos, name='cos'),
 	path('comanda/', views.comanda, name='comanda'),
 	path('chat/', views.chat, name='chat'),
-	path('login/', views.cos, name='login'),
+	path('log/', views.log, name='log'),
 	path('searchp/', views.searchp, name='searchp'),
-	
+	path('logout/', views.logout, name='logout'),
 ]

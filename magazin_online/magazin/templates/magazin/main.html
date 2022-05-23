@@ -32,7 +32,12 @@
             <button class="btn btn-info" type="submit" style="margin:10px;">Search</button>
         </form>
         <div class="form-inline my-2 my-lg-0" >
-            <a href="{% url 'utilizatori:utilizator_nou' %}" class="btn btn-info" style="margin:10px;" >Login</a>
+            {% if user.is_authenticated %}
+            <span style="color:#ffff">Hi, {{ request.user.username|upper }}</span>
+            <a class="btn btn-info" href="/logout" style="margin:10px;">Logout</a>
+            {% else %}
+            <a href="{% url 'log' %}" class="btn btn-info" style="margin:10px;" >Login</a>
+            {% endif %}
             <a href="{% url 'utilizatori:utilizator_nou' %}" class="btn btn-info" style="margin:10px;">Utilizator Nou</a>
             <a href="{% url 'cos' %}" >
                 <img id="cart-icon" src="{% static 'images/cart.png' %}">

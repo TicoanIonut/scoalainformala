@@ -50,14 +50,16 @@
 				<hr>
 				<h3>Cosul de Cumparaturi</h3>
 				<hr>
+				{% for item in intems %}
 				<div class="cart-row" >
-					<div style="flex:2"><img class="row-image" src="{% static 'images/placeholder.png' %}"></div>
-					<div style="flex:2"><p>Produs 1</p></div>
-					<div style="flex:1"><p>20.00 lei</p></div>
-					<div style="flex:1"><p>x2</p></div>
+					<div style="flex:2"><img class="row-image" src="{{ item.produs.imageURL }}"></div>
+					<div style="flex:2"><p>{{ item.produs.name }}</p></div>
+					<div style="flex:1"><p>{{ item.produs.price }} Lei</p></div>
+					<div style="flex:1"><p>{{ item.cantitate }}</p></div>
 				</div>
-				<h5>Produse:   2</h5>
-				<h5>Total:   40 lei</h5>
+				{% endfor %}
+				<h5>Produse: {{ comanda.cos_items }}</h5>
+				<h5>Total: {{ comanda.cos_total|floatformat:2 }} Lei</h5>
 			</div>
 		</div>
 	</div>
