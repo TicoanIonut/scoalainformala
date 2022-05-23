@@ -6,13 +6,14 @@ from django.forms import TextInput
 class NewAccountForm(forms.ModelForm):
 	class Meta:
 		model = User
-		fields = ['first_name', 'last_name', 'email', 'username']
+		fields = ['first_name', 'last_name', 'email', 'username', 'password']
 		
 		widgets = {
 			'first_name': TextInput(attrs={'placeholder': 'First name', 'class': 'form-control'}),
 			'last_name': TextInput(attrs={'placeholder': 'Lirst name', 'class': 'form-control'}),
 			'email': TextInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
 			'username': TextInput(attrs={'placeholder': 'username', 'class': 'form-control'}),
+			'password': TextInput(attrs={'placeholder': 'password', 'class': 'form-control'}),
 		}
 	
 
