@@ -1,4 +1,4 @@
-{% extends 'magazin/magazin.html' %}
+{% extends 'magazin/main.html' %}
 {% block content %}
     <form method="POST">
         {% csrf_token %}
@@ -10,6 +10,6 @@
 
     <button type="submit" class="btn btn-info">Login</button>
         <span style="color: red;">{{ form.non_field_errors }}</span>
-        <p class="text-left">Nu ai cont? <a href="{% url 'utilizatori:utilizator_nou' %}">Creaza un cont</a>.</p>
+        <p class="text-left">Nu ai cont? <a href="{% url 'login' %}">Creaza un cont</a>.</p>
     </form>
 {% endblock %}

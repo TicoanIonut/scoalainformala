@@ -26,20 +26,23 @@
             <li class="nav-item active">
             </li>
         </ul>
-        <form class="d-flex" method="POST" action="{% url 'searchp' %}" >
+        <form class="d-flex" method="POST" action="{% url 'searchp' %}">
             {% csrf_token %}
-            <input class="form-control me-2" type="search" placeholder="Cauta produs" aria-label="Search" style="margin:10px;" name="cauta">
+            <input class="form-control me-2" type="search" placeholder="Cauta produs" aria-label="Search"
+                   style="margin:10px;" name="cauta">
             <button class="btn btn-info" type="submit" style="margin:10px;">Search</button>
         </form>
-        <div class="form-inline my-2 my-lg-0" >
+        <div class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
             {% if user.is_authenticated %}
             <span style="color:#ffff">Hi, {{ request.user.username|upper }}</span>
             <a class="btn btn-info" href="/logout" style="margin:10px;">Logout</a>
             {% else %}
-            <a href="{% url 'log' %}" class="btn btn-info" style="margin:10px;" >Login</a>
+            <a href="{% url 'log' %}" class="btn btn-info" style="margin:10px;">Login</a>
             {% endif %}
-            <a href="{% url 'utilizatori:utilizator_nou' %}" class="btn btn-info" style="margin:10px;">Utilizator Nou</a>
-            <a href="{% url 'cos' %}" >
+            <a href="{% url 'login' %}" class="btn btn-info" style="margin:10px;">Utilizator
+                Nou</a>
+            <a href="{% url 'cos' %}">
                 <img id="cart-icon" src="{% static 'images/cart.png' %}">
             </a>
             <p id="cart-total">0</p>
@@ -65,7 +68,7 @@
         crossorigin="anonymous"></script>
 <script src="{% static 'js/script.js' %}" type="text/javascript"></script>
 </body>
-        <div id="chat-icon" style="float:right; margin:10px;" >
-            <a href="{% url 'chat' %}" class="btn btn-info" style="position:relative; top:-150px; left:-25px;">Chat</a>
-        </div>
+<div id="chat-icon" style="float:right; margin:10px;">
+    <a href="{% url 'chat' %}" class="btn btn-info" style="position:sticky; top:-150px; left:-25px;">Chat</a>
+</div>
 </html>
