@@ -4,22 +4,35 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import *
 from django.core.paginator import Paginator
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.contrib.auth.models import User
-from django.core.mail import EmailMultiAlternatives
-from django.template.loader import render_to_string
-from django.urls import reverse
-from django.views.generic import CreateView
 from magazin.forms import NewAccountForm
+from django.http import JsonResponse
+import json
 
+
+# def magazin(request):
+# 	p = Paginator(Produs.objects.all().order_by('name'), 6)
+# 	page = request.GET.get('page')
+# 	produse_paginate = p.get_page(page)
+# 	contain = {'produse_paginate': produse_paginate}
+# 	return render(request, 'magazin/magazin.html', contain)
 
 def magazin(request):
+	if request.user.is_authenticated:
+		client = request.user.client
+		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
+		produse = comanda.comandaprodus_set.all()
+		cosProduse = comanda.get_cart_items
+	else:
+		produse=[]
+		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
+		cosProduse = comanda['get_cart_items']
+		
 	p = Paginator(Produs.objects.all().order_by('name'), 6)
 	page = request.GET.get('page')
 	produse_paginate = p.get_page(page)
-	contain = {'produse_paginate': produse_paginate}
+	
+	contain = {'produse_paginate': produse_paginate, 'cosProduse': cosProduse}
 	return render(request, 'magazin/magazin.html', contain)
-
 
 def searchp(request):
 	if request.method == 'POST':
@@ -33,29 +46,50 @@ def searchp(request):
 
 
 def cos(request):
-	# if request.user.is_authenticated:
-	# 	client = request.user.client
-	# 	comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
-	# 	items = comanda.comadaitem_set.all()
-	# else:
-	# 	items = []
-	# 	comanda = {'cos_total': 0, 'cos_items': 0}
-	# contain = {'items': items, 'comanda': comanda}
-	contain = {'comanda': comanda}
+	if request.user.is_authenticated:
+		client = request.user.client
+		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
+		items = comanda.comandaprodus_set
+	else:
+		items = []
+		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
+
+	contain = {'items': items, 'comanda': comanda}
 	return render(request, 'magazin/cos.html', contain)
 
 
 def comanda(request):
-	# if request.user.is_authenticated:
-	# 	client = request.user.client
-	# 	comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
-	# 	items = comanda.comadaitem_set.all()
-	# else:
-	# 	items = []
-	# 	comanda = {'cos_total': 0, 'cos_items': 0}
-	# contain = {'items': items, 'comanda': comanda}
-	contain = {'comanda': comanda}
+	if request.user.is_authenticated:
+		client = request.user.client
+		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
+		items = comanda.comandaprodus_set.all()
+	else:
+		items = []
+		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
+	
+	contain = {'items': items, 'comanda': comanda}
 	return render(request, 'magazin/comanda.html', contain)
+
+
+
+def updateItem(request):
+	data = json.loads(request.body)
+	produsId = data['produsId']
+	action = data['action']
+	print('Action:', action)
+	print('Produs:', produsId)
+	client = request.user.client
+	produs = Produs.objects.get(id=produsId)
+	comanda, created = Comanda.objects.get_or_create(client=client, complete=False)
+	comandaProdus, created = ComandaProdus.objects.get_or_create(comanda=comanda, produs=produs)
+	if action == 'add':
+		comandaProdus.cantitate = (comandaProdus.cantitate + 1)
+	elif action == 'remove':
+		comandaProdus.cantitate = (comandaProdus.cantitate - 1)
+	comandaProdus.save()
+	if comandaProdus.cantitate <= 0:
+		comandaProdus.delete()
+	return JsonResponse('Produsul a fost adaugat', safe=False)
 
 
 def chat(request):

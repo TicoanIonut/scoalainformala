@@ -14,31 +14,50 @@ class Client(models.Model):
 class Produs(models.Model):
 	name = models.CharField(max_length=200, null=True)
 	price = models.FloatField()
-	imagine = models.ImageField(null=True,)
+	digital = models.BooleanField(default=False, null=True, blank=True)
+	imagine = models.ImageField(null=True, blank=True)
 	
 	def __str__(self):
 		return self.name
 	
+	@property
+	def imageURL(self):
+		try:
+			url = self.imagine.url
+		except:
+			url = ''
+		return url
+
 
 class Comanda(models.Model):
 	client = models.ForeignKey(Client, on_delete=models.SET_NULL, blank=True, null=True)
 	data_comenzii = models.DateTimeField(auto_now_add=True)
-	complet = models.BooleanField(default=False, null=True, blank=False)
+	complet = models.BooleanField(default=False)
 	id_tranzactie = models.CharField(max_length=200, null=True)
+	
 	
 	def __str__(self):
 		return str(self.id)
 	
 	@property
-	def cos_total(self):
-		comandaitems = self.comandaitem_set.all()
-		total = sum([item.total for item in comandaitems])
+	def livrare(self):
+		livrare = False
+		comandaitems = self.comandaprodus_set.all()
+		for i in comandaitems:
+			if i.produs.digital == False:
+				livrare = True
+		return livrare
+	
+	@property
+	def get_cart_total(self):
+		comandaitems = self.comandaprodus_set.all()
+		total = sum([produs.get_total for produs in comandaitems])
 		return total
 
 	@property
-	def cos_items(self):
-		comandaitems = self.comandaitem_set.all()
-		total = sum([item.get_cantitate for item in comandaitems])
+	def get_cart_items(self):
+		comandaitems = self.comandaprodus_set.all()
+		total = sum([produs.cantitate for produs in comandaitems])
 		return total
 
 	
@@ -49,7 +68,7 @@ class ComandaProdus(models.Model):
 	data_adaugarii = models.DateTimeField(auto_now_add=True)
 	
 	@property
-	def total(self):
+	def get_total(self):
 		total = self.produs.price * self.cantitate
 		return total
 
