@@ -92,10 +92,6 @@ def updateItem(request):
 	return JsonResponse('Produsul a fost adaugat', safe=False)
 
 
-def chat(request):
-	return render(request, 'magazin/chat.html')
-
-
 def register_request(request):
 	if request.method == "POST":
 		form = NewAccountForm(request.POST)
@@ -131,4 +127,16 @@ def logout(request):
 	lgout(request)
 	messages.info(request, "Ai iesit din cont.")
 	return redirect("magazin")
+
+
+def vezi(request):
+	vez = Produs.objects.order_by('name')
+	# pk = Produs.objects.filter(3)
+	contain = {'vez': vez, 'pk': 3}
+	return render(request, 'magazin/vezi.html', contain)
+
+
+def chat(request):
+	return render(request, 'magazin/chat.html')
+
 

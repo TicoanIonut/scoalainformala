@@ -9,7 +9,7 @@
             <h6><strong>{{produs.name}}</strong></h6>
             <hr>
             <button data-produs="{{ produs.id }}" data-action="add" class="btn btn-outline-secondary add-btn update-cos">Adauga in cos</button>
-            <a class="btn btn-outline-info" href="#">Vezi</a>
+            <a class="btn btn-outline-info" href="{% url 'vezi' %}">Vezi</a>
             <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
         </div>
     </div>
