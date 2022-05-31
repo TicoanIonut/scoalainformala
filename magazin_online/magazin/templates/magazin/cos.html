@@ -9,8 +9,8 @@
 				<br>
 				<table class="table" >
 					<tr>
-						<th><h5>Produse: <strong>{{ comada.get_cart_items }}</strong></h5></th>
-						<th><h5>Total:<strong>{{ comada.get_cart_total|floatformat:2 }} Lei</strong></h5></th>
+						<th><h5>Produse: <strong>{{ comanda.get_cart_items }}</strong></h5></th>
+						<th><h5>Total:<strong>{{ comanda.get_cart_total|floatformat:2 }} Lei</strong></h5></th>
 						<th>
 							<a  style="float:right; margin:5px;" class="btn btn-info" href="{% url 'comanda' %}">Comanda</a>
 						</th>
@@ -34,12 +34,11 @@
 					<div style="flex:1">
 						<p class="quantity">{{ item.cantitate }}</p>
 						<div class="quantity">
-							<img class="chg-quantity" src="{% static  'images/arrow-up.png' %}">
-
-							<img class="chg-quantity" src="{% static  'images/arrow-down.png' %}">
+							<img data-product="{{item.product.id}}" data-action="add" class="chg-quantity update-cart" src="{% static  'images/arrow-up.png' %}">
+							<img data-product="{{item.product.id}}" data-action="remove" class="chg-quantity update-cart" src="{% static  'images/arrow-down.png' %}">
 						</div>
 					</div>
-					<div style="flex:1"><p>{{ produs.get_total }} lei</p></div>
+					<div style="flex:1"><p>{{ item.get_total }} lei</p></div>
 				</div>
 				{% endfor %}
 			</div>
