@@ -4,11 +4,10 @@
 <center>
     {% if cauta %}
     <h1>Ati cautat {{ cauta }}</h1>
-    <br/>
     <div class="container">
 
         <div class="row">
-            {% for produs in produse %}
+            {% for produs in produse_paginate %}
             <div class="col-lg-4">
                 <img class="thumbnail" src="{{produs.imagine.url}}"
                      style="object-fit: cover; object-fit: contain; background-color: #fff;">
@@ -16,16 +15,25 @@
                     <h6><strong>{{produs.name}}</strong></h6>
                     <hr>
                     <button class="btn btn-outline-secondary add-btn">Aauga in cos</button>
-                    <a class="btn btn-outline-info" href="#">Vezi</a>
+                    <a class="btn btn-outline-info" href="{% url 'vezi' %}">Vezi</a>
                     <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
                 </div>
             </div>
             {% endfor %}
         </div>
+        <br/> </br/>
+        {% if produse_paginate.has_previous %}
+        <a href="?page=1">&laquo Prima pagina</a>
+        <a href="?page={{ produse_paginate.previous_page_number }}">Pagina anterioara</a>
+        {% endif %}
+        {% if produse_paginate.has_next %}
+        <a href="?page={{ produse_paginate.next_page_number }}">Pagina urmatoare</a>
+        <a href="?page={{ produse_paginate.paginator.num_pages }}">&raquo Ultima pagina</a>
+        {% endif %}
         {% else %}
         <h1> Ati uitat sa scrieti ce cautati</h1>
-        {% endif %}
     </div>
+    {% endif %}
 </center>
 
 {% endblock %}
