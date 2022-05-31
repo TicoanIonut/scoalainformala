@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.contrib.auth import login, authenticate, logout as lgout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
@@ -8,13 +10,6 @@ from magazin.forms import NewAccountForm
 from django.http import JsonResponse
 import json
 
-
-# def magazin(request):
-# 	p = Paginator(Produs.objects.all().order_by('name'), 6)
-# 	page = request.GET.get('page')
-# 	produse_paginate = p.get_page(page)
-# 	contain = {'produse_paginate': produse_paginate}
-# 	return render(request, 'magazin/magazin.html', contain)
 
 def magazin(request):
 	if request.user.is_authenticated:
@@ -49,12 +44,14 @@ def cos(request):
 	if request.user.is_authenticated:
 		client = request.user.client
 		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
-		items = comanda.comandaprodus_set
+		items = comanda.comandaprodus_set.all()
+		cosProduse = comanda.get_cart_items
 	else:
 		items = []
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
+		cosProduse = comanda['get_cart_items']
 
-	contain = {'items': items, 'comanda': comanda}
+	contain = {'items': items, 'comanda': comanda, 'cosProduse': cosProduse}
 	return render(request, 'magazin/cos.html', contain)
 
 
@@ -63,33 +60,34 @@ def comanda(request):
 		client = request.user.client
 		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
 		items = comanda.comandaprodus_set.all()
+		cosProduse = comanda.get_cart_items
 	else:
 		items = []
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
+		cosProduse = comanda['get_cart_items']
 	
-	contain = {'items': items, 'comanda': comanda}
+	contain = {'items': items, 'comanda': comanda, 'cosProduse': cosProduse}
 	return render(request, 'magazin/comanda.html', contain)
-
 
 
 def updateItem(request):
 	data = json.loads(request.body)
-	produsId = data['produsId']
+	productId = data['productId']
 	action = data['action']
 	print('Action:', action)
-	print('Produs:', produsId)
+	print('Product:', productId)
 	client = request.user.client
-	produs = Produs.objects.get(id=produsId)
-	comanda, created = Comanda.objects.get_or_create(client=client, complete=False)
-	comandaProdus, created = ComandaProdus.objects.get_or_create(comanda=comanda, produs=produs)
+	produs = Produs.objects.get(id=productId)
+	comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
+	comandaItem, created = ComandaProdus.objects.get_or_create(comanda=comanda, produs=produs)
 	if action == 'add':
-		comandaProdus.cantitate = (comandaProdus.cantitate + 1)
+		comandaItem.cantitate = (comandaItem.cantitate + 1)
 	elif action == 'remove':
-		comandaProdus.cantitate = (comandaProdus.cantitate - 1)
-	comandaProdus.save()
-	if comandaProdus.cantitate <= 0:
-		comandaProdus.delete()
-	return JsonResponse('Produsul a fost adaugat', safe=False)
+		comandaItem.cantitate = (comandaItem.cantitate - 1)
+	comandaItem.save()
+	if comandaItem.cantitate <= 0:
+		comandaItem.delete()
+	return JsonResponse('Produs adaugat', safe=False)
 
 
 def register_request(request):

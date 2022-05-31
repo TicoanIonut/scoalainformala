@@ -1,13 +1,11 @@
 {% extends 'magazin/main.html' %}
 {% load static %}
 {% block content %}
-<center>
-    {% if cauta %}
-    <h1>Ati cautat {{ cauta }}</h1>
+    <h1>Produsul este</h1>
     <div class="container">
-
         <div class="row">
-            {% for produs in produse_paginate %}
+            {% for produs in vez %}
+            {% if produs.pk == pk %}
             <div class="col-lg-4">
                 <img class="thumbnail" src="{{produs.imagine.url}}"
                      style="object-fit: cover; object-fit: contain; background-color: #fff;">
@@ -15,25 +13,12 @@
                     <h6><strong>{{produs.name}}</strong></h6>
                     <hr>
                     <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Aauga in cos</button>
-                    <a class="btn btn-outline-info" href="{% url 'vezi' %}">Vezi</a>
+                    <a>DESCRIERE PRODUS DESCRIERE PRODUS </a>
                     <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
         </div>
-        <br/> </br/>
-        {% if produse_paginate.has_previous %}
-        <a href="?page=1">&laquo Prima pagina</a>
-        <a href="?page={{ produse_paginate.previous_page_number }}">Pagina anterioara</a>
-        {% endif %}
-        {% if produse_paginate.has_next %}
-        <a href="?page={{ produse_paginate.next_page_number }}">Pagina urmatoare</a>
-        <a href="?page={{ produse_paginate.paginator.num_pages }}">&raquo Ultima pagina</a>
-        {% endif %}
-        {% else %}
-        <h1> Ati uitat sa scrieti ce cautati</h1>
     </div>
-    {% endif %}
-</center>
-
 {% endblock %}
