@@ -14,6 +14,7 @@ class Client(models.Model):
 class Produs(models.Model):
 	name = models.CharField(max_length=200, null=True)
 	price = models.FloatField()
+	digital = models.BooleanField(default=False, null=True, blank=True)
 	imagine = models.ImageField(null=True, blank=True)
 	
 	def __str__(self):
@@ -35,8 +36,16 @@ class Comanda(models.Model):
 	id_tranzactie = models.CharField(max_length=200, null=True)
 	
 	def __str__(self):
-		return self.id
+		return str(self.id)
 	
+	@property
+	def livrare(self):
+		livrare = False
+		comandaitems = self.comandaprodus_set.all()
+		for i in comandaitems:
+			if i.produs.digital == False:
+				livrare = True
+		return livrare
 	
 	@property
 	def get_cart_total(self):

@@ -66,7 +66,7 @@ def comanda(request):
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
 	
-	contain = {'items': items, 'comanda': comanda, 'cosProduse': cosProduse}
+	contain = {'items': items, 'comanda': comanda,'cosProduse': cosProduse }
 	return render(request, 'magazin/comanda.html', contain)
 
 
@@ -87,7 +87,7 @@ def updateItem(request):
 	comandaItem.save()
 	if comandaItem.cantitate <= 0:
 		comandaItem.delete()
-	return JsonResponse('Produs adaugat', safe=False)
+	return JsonResponse('Item was added', safe=False)
 
 
 def register_request(request):
