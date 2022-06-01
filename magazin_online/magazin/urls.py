@@ -10,6 +10,7 @@ urlpatterns = [
 	path('logout/', views.logout, name='logout'),
 	path('login/', views.register_request, name='login'),
 	path('update_item/', views.updateItem, name='update_Item'),
-	path('vezi/', views.vezi, name='vezi'),
+	path('vezi/<int:pk>', views.vezi, name='vezi'),
 	path('chat/', views.chat, name='chat'),
+	
 ]

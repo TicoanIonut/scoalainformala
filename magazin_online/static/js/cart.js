@@ -16,7 +16,7 @@ for (i = 0; i < updateBtns.length; i++) {
 }
 
 function updateUserOrder(productId, action){
-	console.log('Utiliatorul este autentificat.')
+	console.log('User is authenticated, sending data...')
 
 		var url = '/update_item/'
 
