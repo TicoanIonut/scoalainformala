@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import *
 from django.core.paginator import Paginator
-from magazin.forms import NewAccountForm
+from magazin.forms import NewAccountForm, LoginForm
 from django.http import JsonResponse
 import json
 
@@ -20,7 +20,7 @@ def magazin(request):
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
 		
-	p = Paginator(Produs.objects.all().order_by('name'), 6)
+	p = Paginator(Produs.objects.all().order_by('name'), 8)
 	page = request.GET.get('page')
 	produse_paginate = p.get_page(page)
 	
@@ -119,31 +119,44 @@ def register_request(request):
 	return render(request=request, template_name="magazin/login.html", context={"form": form,'cosProduse': cosProduse})
 
 
+# def log(request):
+# 	if request.method == "POST":
+# 		form = AuthenticationForm(request, data=request.POST)
+# 		if form.is_valid():
+# 			username = form.cleaned_data.get('username')
+# 			password = form.cleaned_data.get('password')
+# 			user = authenticate(username=username, password=password)
+# 			if user is not None:
+# 				login(request, user)
+# 				return redirect("magazin")
+# 			else:
+# 				messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
+# 		else:
+# 			messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
+# 	form = AuthenticationForm()
+# 	return render(request=request, template_name="magazin/log.html", context={'form': form})
 def log(request):
-	if request.method == "POST":
-		form = AuthenticationForm(request, data=request.POST)
-		if form.is_valid():
-			username = form.cleaned_data.get('username')
-			password = form.cleaned_data.get('password')
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				login(request, user)
-				return redirect("magazin")
-			else:
-				messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
+	form = LoginForm(request.POST or None)
+	contain = {"form": form}
+	if form.is_valid():
+		username = form.cleaned_data.get("username")
+		password = form.cleaned_data.get("password")
+		user = authenticate(request, username=username, password=password)
+		if user is not None:
+			login(request, user)
+			return redirect('magazin')
 		else:
-			messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
-	form = AuthenticationForm()
-	return render(request=request, template_name="magazin/log.html", context={'form': form})
+			return redirect("magazin")
+	else:
+		return render(request, "magazin/log.html", contain)
 
 
 def logout(request):
 	lgout(request)
-	messages.info(request, "Ai iesit din cont.")
 	return redirect("magazin")
 
 
-def vezi(request,pk):
+def vezi(request, pk):
 	if request.user.is_authenticated:
 		client = request.user.client
 		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)

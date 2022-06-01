@@ -1,19 +1,22 @@
 {% extends 'magazin/main.html' %}
 {% load static %}
 {% block content %}
+<center>
     <h1>Produsul este</h1>
     <div class="container">
         <div class="row">
 
             {% if produs.pk == pk %}
-            <div class="col-lg-4">
+
+            <div class="col-lg">
                 <img class="thumbnail" src="{{produs.imagine.url}}"
                      style="object-fit: cover; object-fit: contain; background-color: #fff;">
                 <div class="box-element product" style="background-color: #fff;">
                     <h6><strong>{{produs.name}}</strong></h6>
                     <hr>
-                    <button data-product="{{product.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Aauga in cos</button>
-                    <a>DESCRIERE PRODUS DESCRIERE PRODUS </a>
+                    <button data-product="{{produs.id}}" data-action="add"
+                            class="btn btn-outline-secondary add-btn update-cart">Aauga in cos
+                    </button>
                     <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
                 </div>
             </div>
@@ -21,4 +24,5 @@
 
         </div>
     </div>
+</center>
 {% endblock %}
