@@ -25,3 +25,8 @@ class NewAccountForm(forms.ModelForm):
 		if User.objects.filter(username=usename_value).exists():
 			self._errors['username'] = self.error_class(['Username-ul deja exista!'])
 		return field_data
+	
+	
+class LoginForm(forms.Form):
+	username = forms.CharField()
+	password = forms.CharField(widget=forms.PasswordInput)
