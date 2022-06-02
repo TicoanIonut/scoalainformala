@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
 
-            {% if produs.pk == pk %}
+            <!--{% if produs.pk == pk %}-->
 
             <div class="col-lg">
                 <img class="thumbnail" src="{{produs.imagine.url}}"
@@ -17,10 +17,13 @@
                     <button data-product="{{produs.id}}" data-action="add"
                             class="btn btn-outline-secondary add-btn update-cart">Aauga in cos
                     </button>
+                    <a>DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS
+                        DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS
+                         DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUSDESCRIERE PRODUS</a>
                     <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
                 </div>
             </div>
-            {% endif %}
+            <!--{% endif %}-->
 
         </div>
     </div>

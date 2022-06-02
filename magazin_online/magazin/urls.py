@@ -1,6 +1,8 @@
 from django.urls import path
 from magazin import views
 
+
+
 urlpatterns = [
 	path('', views.magazin, name='magazin'),
 	path('cos/', views.cos, name='cos'),
@@ -12,5 +14,7 @@ urlpatterns = [
 	path('update_item/', views.updateItem, name='update_Item'),
 	path('vezi/<int:pk>', views.vezi, name='vezi'),
 	path('chat/', views.chat, name='chat'),
+	
+	# path("product/<slug:slug>/", ProductDetailView.as_view(), name="productdetail"),
 	
 ]
