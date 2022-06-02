@@ -2,6 +2,8 @@ from django.contrib.auth import login, authenticate, logout as lgout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.views.generic import TemplateView
+
 from .models import *
 from django.core.paginator import Paginator
 from magazin.forms import NewAccountForm, LoginForm
@@ -166,8 +168,8 @@ def vezi(request, pk):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	vez = Produs.objects.filter(id=pk)
-	# vez = Produs.objects.filter()
+		
+	vez = Produs.objects.get(id=pk)
 	contain = {'vez': vez, 'cosProduse': cosProduse}
 	return render(request, 'magazin/vezi.html', contain)
 
@@ -176,7 +178,27 @@ def chat(request):
 	return render(request, 'magazin/chat.html')
 
 
-def delete_location(request, pk):
-	Produs.objects.filter(id=pk)
-	return redirect('magazin:lista_locatii')
+
+# class ProductDetailView(TemplateView):
+#     template_name = "vezi.html"
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         url_slug = self.kwargs['slug']
+#         product = Produs.objects.get(id=pk)
+#         product.view_count += 1
+#         product.save()
+#         context['product'] = product
+#         return context
+# class ProductDetailView(TemplateView):
+#     template_name = "productdetail.html"
+#
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         url_slug = self.kwargs['slug']
+#         product = Product.objects.get(slug=url_slug)
+#         product.view_count += 1
+#         product.save()
+#         context['product'] = product
+#         return context
 
