@@ -1,31 +1,24 @@
 {% extends 'magazin/main.html' %}
 {% load static %}
 {% block content %}
+
 <center>
-    <h1>Produsul este</h1>
-    <div class="container">
-        <div class="row">
+    <h1>Produsul este {{ vez }}</h1>
 
-            <!--{% if produs.pk == pk %}-->
-
-            <div class="col-lg">
-                <img class="thumbnail" src="{{produs.imagine.url}}"
-                     style="object-fit: cover; object-fit: contain; background-color: #fff;">
-                <div class="box-element product" style="background-color: #fff;">
-                    <h6><strong>{{produs.name}}</strong></h6>
-                    <hr>
-                    <button data-product="{{produs.id}}" data-action="add"
-                            class="btn btn-outline-secondary add-btn update-cart">Aauga in cos
-                    </button>
-                    <a>DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS
+    <div class="row">
+    <div class="col-lg">
+        <img class="thumbnail" src="{{vez.imagine.url}}" style="object-fit: cover; object-fit: contain; background-color: #fff;">
+        <div class="box-element product" style="background-color: #fff;">
+            <h6><strong>{{vez.name}}</strong></h6>
+            <hr>
+            <button data-product="{{vez.id}}" data-action="add" class="btn btn-outline-secondary add-btn update-cart">Adauga in cos</button>
+            <a>DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS
                         DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS
                          DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUS DESCRIERE PRODUSDESCRIERE PRODUS</a>
-                    <h4 style="display: inline-block; float: right">{{produs.price|floatformat:2}} lei</h4>
-                </div>
-            </div>
-            <!--{% endif %}-->
-
+            <h4 style="display: inline-block; float: right">{{vez.price|floatformat:2}} lei</h4>
         </div>
     </div>
-</center>
+</div>
+
+    </center>
 {% endblock %}
