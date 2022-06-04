@@ -2,8 +2,6 @@ from django.contrib.auth import login, authenticate, logout as lgout
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
-
 from .models import *
 from django.core.paginator import Paginator
 from magazin.forms import NewAccountForm, LoginForm
@@ -121,36 +119,36 @@ def register_request(request):
 	return render(request=request, template_name="magazin/login.html", context={"form": form,'cosProduse': cosProduse})
 
 
-# def log(request):
-# 	if request.method == "POST":
-# 		form = AuthenticationForm(request, data=request.POST)
-# 		if form.is_valid():
-# 			username = form.cleaned_data.get('username')
-# 			password = form.cleaned_data.get('password')
-# 			user = authenticate(username=username, password=password)
-# 			if user is not None:
-# 				login(request, user)
-# 				return redirect("magazin")
-# 			else:
-# 				messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
-# 		else:
-# 			messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
-# 	form = AuthenticationForm()
-# 	return render(request=request, template_name="magazin/log.html", context={'form': form})
 def log(request):
-	form = LoginForm(request.POST or None)
-	contain = {"form": form}
-	if form.is_valid():
-		username = form.cleaned_data.get("username")
-		password = form.cleaned_data.get("password")
-		user = authenticate(request, username=username, password=password)
-		if user is not None:
-			login(request, user)
-			return redirect('magazin')
+	if request.method == "POST":
+		form = AuthenticationForm(request, data=request.POST)
+		if form.is_valid():
+			username = form.cleaned_data.get('username')
+			password = form.cleaned_data.get('password')
+			user = authenticate(username=username, password=password)
+			if user is not None:
+				login(request, user)
+				return redirect("magazin")
+			else:
+				messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
 		else:
-			return redirect("magazin")
-	else:
-		return render(request, "magazin/log.html", contain)
+			messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
+	form = AuthenticationForm()
+	return render(request=request, template_name="magazin/log.html", context={'form': form})
+# def log(request):
+# 	form = LoginForm(request.POST or None)
+# 	contain = {"form": form}
+# 	if form.is_valid():
+# 		username = form.cleaned_data.get("username")
+# 		password = form.cleaned_data.get("password")
+# 		user = authenticate(request, username=username, password=password)
+# 		if user is not None:
+# 			login(request, user)
+# 			return redirect('magazin')
+# 		else:
+# 			return redirect("magazin")
+# 	else:
+# 		return render(request, "magazin/log.html", contain)
 
 
 def logout(request):
@@ -168,7 +166,6 @@ def vezi(request, pk):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-		
 	vez = Produs.objects.get(id=pk)
 	contain = {'vez': vez, 'cosProduse': cosProduse}
 	return render(request, 'magazin/vezi.html', contain)
@@ -179,26 +176,4 @@ def chat(request):
 
 
 
-# class ProductDetailView(TemplateView):
-#     template_name = "vezi.html"
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         url_slug = self.kwargs['slug']
-#         product = Produs.objects.get(id=pk)
-#         product.view_count += 1
-#         product.save()
-#         context['product'] = product
-#         return context
-# class ProductDetailView(TemplateView):
-#     template_name = "productdetail.html"
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         url_slug = self.kwargs['slug']
-#         product = Product.objects.get(slug=url_slug)
-#         product.view_count += 1
-#         product.save()
-#         context['product'] = product
-#         return context
 
