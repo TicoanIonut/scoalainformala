@@ -8,11 +8,10 @@ from magazin.models import Client
 class NewAccountForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'email', 'password']
-        
+        fields = ['username', 'first_name', 'email', 'password']
         widgets = {
-            
             'username': TextInput(attrs={'placeholder': 'utilizator', 'class': 'form-control'}),
+            'first_name': TextInput(attrs={'placeholder': 'nume', 'class': 'form-control'}),
             'email': TextInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
             'password': TextInput(attrs={'placeholder': 'parola', 'class': 'form-control'}),
         }
@@ -28,17 +27,7 @@ class NewAccountForm(forms.ModelForm):
         return field_data
     
     
-class NewClientForm(forms.ModelForm):
-    class Meta:
-        model = Client
-        fields = ['utilizator', 'email', 'parola']
-        widgets = {
-            'utilizator': TextInput(attrs={'placeholder': 'utilizator', 'class': 'form-control'}),
-            'email': TextInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
-            'parola': TextInput(attrs={'placeholder': 'parola', 'class': 'form-control'}),
-        }
-    
-    
+   
 class LoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)

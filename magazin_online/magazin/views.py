@@ -4,7 +4,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from .models import *
 from django.core.paginator import Paginator
-from magazin.forms import NewAccountForm, LoginForm, NewClientForm
+from magazin.forms import NewAccountForm
 from django.http import JsonResponse
 import json
 
@@ -96,27 +96,6 @@ def updateItem(request):
 		comandaProdus.delete()
 	return JsonResponse('Produsul a fost adaugat', safe=False)
 
-def client_nou(request):
-	if request.user.is_authenticated:
-		client = request.user.client
-		comanda, created = Comanda.objects.get_or_create(client=client, complet=False)
-		produse = comanda.comandaprodus_set.all()
-		cosProduse = comanda.get_cart_items
-	else:
-		produse=[]
-		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
-		cosProduse = comanda['get_cart_items']
-	if request.method == "POST":
-		form = NewClientForm(request.POST)
-		if form.is_valid():
-			user = form.save()
-			login(request, user)
-			messages.success(request, "Inregistrarea a avut loc cu succes.")
-			return redirect("magazin")
-		messages.error(request, "Inregistrarea nu a aputut fi efectuata .")
-	form = NewClientForm()
-	return render(request=request, template_name="magazin/login.html", context={"form": form, 'cosProduse': cosProduse})
-
 
 def register_request(request):
 	if request.user.is_authenticated:
@@ -128,29 +107,13 @@ def register_request(request):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# if request.method == "POST":
-	# 	uform = NewAccountForm(data=request.POST or None)
-	# 	pform = NewClientForm(data=request.POST or None, files=request.FILES or None)
-	# 	if uform.is_valid() and pform.is_valid():
-	# 		newuser = uform.save(commit=False)
-	# 		newuser.refresh_from_db()
-	# 		newuser.save()
-	# 		profil = pform.save(commit=False)
-	# 		profil.user = newuser
-	# 		profil.save()
-	# 		login(request, newuser)
-	# 		return redirect("magazin")
-	# 	return render(request, "magazin/login.html", {'uform': uform, 'pform': pform, 'cosProduse': cosProduse})
-	# uform = NewAccountForm(data=request.POST)
-	# pform = NewClientForm(data=request.POST, files=request.FILES)
-	# return render(request, "magazin/login.html", {'uform': uform, 'pform': pform, 'cosProduse': cosProduse})
-
 	if request.method == "POST":
 		form = NewAccountForm(request.POST)
 		if form.is_valid():
 			newuser = form.save()
-			newuser.refresh_from_db()
-			newuser.save()
+			# newuser.save()
+			client = Client( name=newuser.first_name, email=newuser.email, parola=newuser.password)
+			client.save()
 			login(request, newuser)
 			messages.success(request, "Inregistrarea a avut loc cu succes." )
 			return redirect("magazin")
@@ -184,20 +147,6 @@ def log(request):
 			messages.error(request, "Numele de utilizator sau parola sunt incorecte.")
 	form = AuthenticationForm()
 	return render(request=request, template_name="magazin/log.html", context={'form': form, 'cosProduse': cosProduse})
-# def log(request):
-# 	form = LoginForm(request.POST or None)
-# 	contain = {"form": form}
-# 	if form.is_valid():
-# 		username = form.cleaned_data.get("username")
-# 		password = form.cleaned_data.get("password")
-# 		user = authenticate(request, username=username, password=password)
-# 		if user is not None:
-# 			login(request, user)
-# 			return redirect('magazin')
-# 		else:
-# 			return redirect("magazin")
-# 	else:
-# 		return render(request, "magazin/log.html", contain)
 
 
 def logout(request):
