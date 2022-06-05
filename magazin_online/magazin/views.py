@@ -9,6 +9,7 @@ from django.http import JsonResponse
 import json
 
 
+
 def magazin(request):
 	if request.user.is_authenticated:
 		client = request.user.client
@@ -111,7 +112,7 @@ def register_request(request):
 		form = NewAccountForm(request.POST)
 		if form.is_valid():
 			newuser = form.save()
-			# newuser.save()
+			newuser.save()
 			client = Client( name=newuser.first_name, email=newuser.email, parola=newuser.password)
 			client.save()
 			login(request, newuser)
