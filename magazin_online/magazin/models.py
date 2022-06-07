@@ -13,12 +13,7 @@ class Client(models.Model):
 	def __str__(self):
 		return self.name
 	
-	
-@receiver(post_save, sender=User)
-def update_user_profile(sender, instance, created, **kwargs):
-	if created:
-		Client.objects.create(utilizator=instance)
-	instance.client.save()
+
 	
 class Produs(models.Model):
 	name = models.CharField(max_length=200, null=True)
