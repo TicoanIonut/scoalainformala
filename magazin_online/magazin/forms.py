@@ -8,10 +8,11 @@ from magazin.models import Client
 class NewAccountForm(forms.ModelForm):
     class Meta:
         model = User
-        fields = ['username', 'first_name', 'email', 'password']
+        fields = ['username', 'first_name', 'last_name', 'email', 'password']
         widgets = {
             'username': TextInput(attrs={'placeholder': 'utilizator', 'class': 'form-control'}),
             'first_name': TextInput(attrs={'placeholder': 'nume', 'class': 'form-control'}),
+            'last_name': TextInput(attrs={'placeholder': 'nume', 'class': 'form-control'}),
             'email': TextInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
             'password': TextInput(attrs={'placeholder': 'parola', 'class': 'form-control'}),
         }

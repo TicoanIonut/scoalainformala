@@ -9,6 +9,7 @@ from django.http import JsonResponse
 import json
 
 
+
 def magazin(request):
 	if request.user.is_authenticated:
 		client = request.user.client
@@ -19,13 +20,13 @@ def magazin(request):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# produsele din cos
+		
 	p = Paginator(Produs.objects.all().order_by('name'), 8)
 	page = request.GET.get('page')
 	produse_paginate = p.get_page(page)
+	
 	contain = {'produse_paginate': produse_paginate, 'cosProduse': cosProduse}
 	return render(request, 'magazin/magazin.html', contain)
-
 
 def searchp(request):
 	if request.method == 'POST':
@@ -57,7 +58,7 @@ def cos(request):
 		items = []
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# produsele din cos
+
 	contain = {'items': items, 'comanda': comanda, 'cosProduse': cosProduse}
 	return render(request, 'magazin/cos.html', contain)
 
@@ -72,7 +73,7 @@ def comanda(request):
 		items = []
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# produsele din cos
+	
 	contain = {'items': items, 'comanda': comanda,'cosProduse': cosProduse }
 	return render(request, 'magazin/comanda.html', contain)
 
@@ -107,18 +108,22 @@ def register_request(request):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-		# produsele din cos
+	
 	if request.method == "POST":
 		form = NewAccountForm(request.POST)
 		if form.is_valid():
-			newuser = form.save()
-			newuser.save()
-			client = Client( name=newuser.first_name, email=newuser.email, parola=newuser.password)
-			client.save()
-			login(request, newuser)
-			messages.success(request, "Inregistrarea a avut loc cu succes." )
+			form.save()
+			username = form.cleaned_data.get('username')
+			raw_password = form.cleaned_data.get('password')
+			email = form.cleaned_data.get('email')
+			user = form.save()
+			user.set_password(user.password)
+			user.save()
+			user = authenticate(username=username, password=raw_password)
+			Client.objects.create(utilizator=user, name=username, email=email, parola=raw_password)
+			login(request, user)
 			return redirect("magazin")
-		messages.error(request, "Inregistrarea nu a aputut fi efectuata .")
+		
 	form = NewAccountForm()
 	return render(request=request, template_name="magazin/login.html", context={"form": form, 'cosProduse': cosProduse})
 
@@ -133,7 +138,6 @@ def log(request):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# produsele din cos
 	if request.method == "POST":
 		form = AuthenticationForm(request, data=request.POST)
 		if form.is_valid():
@@ -166,14 +170,9 @@ def vezi(request, pk):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-	# produsele din cos
 	vez = Produs.objects.get(id=pk)
 	contain = {'vez': vez, 'cosProduse': cosProduse}
 	return render(request, 'magazin/vezi.html', contain)
-
-
-# def chat(request):
-# 	return render(request, 'magazin/chat.html')
 
 
 
