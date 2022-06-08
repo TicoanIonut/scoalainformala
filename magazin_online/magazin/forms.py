@@ -1,8 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.forms import TextInput
-
-from magazin.models import Client
+from django.forms import TextInput, PasswordInput, EmailInput
 
 
 class NewAccountForm(forms.ModelForm):
@@ -13,8 +11,8 @@ class NewAccountForm(forms.ModelForm):
             'username': TextInput(attrs={'placeholder': 'utilizator', 'class': 'form-control'}),
             'first_name': TextInput(attrs={'placeholder': 'nume', 'class': 'form-control'}),
             'last_name': TextInput(attrs={'placeholder': 'nume', 'class': 'form-control'}),
-            'email': TextInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
-            'password': TextInput(attrs={'placeholder': 'parola', 'class': 'form-control'}),
+            'email': EmailInput(attrs={'placeholder': 'email', 'class': 'form-control'}),
+            'password': PasswordInput(attrs={'placeholder': 'parola', 'class': 'form-control'}),
         }
     
     def clean(self):
