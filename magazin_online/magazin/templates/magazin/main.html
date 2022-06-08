@@ -10,7 +10,7 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"/>
-	<script type="text/javascript">
+    <script type="text/javascript">
 		var user = '{{request.user}}'
 
 		function getToken(name) {
@@ -30,45 +30,15 @@
 		}
 		var csrftoken = getToken('csrftoken')
 
-		function getCookie(name) {
-		    // Split cookie string and get all individual name=value pairs in an array
-		    var cookieArr = document.cookie.split(";");
-
-		    // Loop through the array elements
-		    for(var i = 0; i < cookieArr.length; i++) {
-		        var cookiePair = cookieArr[i].split("=");
-
-		        /* Removing whitespace at the beginning of the cookie name
-		        and compare it with the given string */
-		        if(name == cookiePair[0].trim()) {
-		            // Decode the cookie value and return
-		            return decodeURIComponent(cookiePair[1]);
-		        }
-		    }
-
-		    // Return null if not found
-		    return null;
-		}
-		var cart = JSON.parse(getCookie('cart'))
-
-		if (cart == undefined){
-			cart = {}
-			console.log('Cart Created!', cart)
-			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
-		}
-		console.log('Cart:', cart)
-
-	</script>
+    </script>
 </head>
 <body>
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <a class="navbar-brand" href="{% url 'magazin' %}">Magazin</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
