@@ -1,7 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
-from django.dispatch import receiver
 
 
 class Client(models.Model):
@@ -13,7 +11,6 @@ class Client(models.Model):
 	def __str__(self):
 		return self.name
 	
-
 	
 class Produs(models.Model):
 	name = models.CharField(max_length=200, null=True)
