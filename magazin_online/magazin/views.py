@@ -9,7 +9,6 @@ from django.http import JsonResponse
 import json
 
 
-
 def magazin(request):
 	if request.user.is_authenticated:
 		client = request.user.client
@@ -20,13 +19,12 @@ def magazin(request):
 		produse=[]
 		comanda = {'get_cart_total': 0, 'get_cart_items': 0}
 		cosProduse = comanda['get_cart_items']
-		
 	p = Paginator(Produs.objects.all().order_by('name'), 8)
 	page = request.GET.get('page')
 	produse_paginate = p.get_page(page)
-	
 	contain = {'produse_paginate': produse_paginate, 'cosProduse': cosProduse}
 	return render(request, 'magazin/magazin.html', contain)
+
 
 def searchp(request):
 	if request.method == 'POST':
@@ -123,7 +121,6 @@ def register_request(request):
 			Client.objects.create(utilizator=user, name=username, email=email, parola=raw_password)
 			login(request, user)
 			return redirect("magazin")
-		
 	form = NewAccountForm()
 	return render(request=request, template_name="magazin/login.html", context={"form": form, 'cosProduse': cosProduse})
 
