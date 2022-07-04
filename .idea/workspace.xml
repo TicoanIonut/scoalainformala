@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="02.05.2022">
-      <change afterPath="$PROJECT_DIR$/complyadvantage/cmpadv.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/complyadvantage/DataStrategist.xlsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/complyadvantage/cmpadv.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/magazin_online/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/magazin_online/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/zecommag.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/zecommag/ecomtuts-master/ecomtuts-master/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/zecommag/ecomtuts-master/ecomtuts-master/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
