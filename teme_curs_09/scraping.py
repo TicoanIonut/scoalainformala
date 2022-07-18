@@ -50,29 +50,27 @@ df.replace(r'[)]|[(]|[\s]', '', regex=True, inplace=True)
 df = df.set_index(["Judet"])
 one = df['20.01.2022'].str.split(',', expand=True)
 one.rename(columns={0: 'cazuri totale', 1: 'cazuri noi', 2: 'incidenta'}, inplace=True)
-print(one)
+print(one)          # cazurile pe zi(prima zi)
 one.to_csv('one.csv')
 one.to_csv('one.xls')
-print(df)
+print(df)           # cazuri totale pe toate zilele
 df.to_csv('tabel_2.xls')
 df.to_csv('tabel_2.csv')
-# lista_cu_randuri_finale = []
-# for jud, valori in date.items():
-#     cazuri_confirmate = sum([val[0] for val in valori])
-#     cazuri_noi = sum([val[1] for val in valori])
-#     inci = round(average([val[2] for val in valori]), 2)
-#
-#
-#     lista_cu_randuri_finale.append(
-#         {
-#             "Judet": jud,
-#             "Număr de cazuri confirmate(total) pe 7 zile": cazuri_confirmate,
-#             "Număr de cazuri nou confirmate pe 7 zile": cazuri_noi,
-#             "Incidența  înregistrată la 14 zile pe ultimele 7 zile": inci,
-#         }
-#     )
-#
-# with open(r'C:\Users\2dor\PycharmProjects\scoalainformala\teme_curs_09\Covid.csv', 'w', encoding="utf-8") as fp:
-#     writer = csv.DictWriter(fp, fieldnames=list(lista_cu_randuri_finale[0].keys()))
-#     writer.writeheader()
-#     writer.writerows(lista_cu_randuri_finale)
+lista_cu_randuri_finale = []
+for jud, valori in date.items():
+    cazuri_confirmate = sum([val[0] for val in valori])
+    cazuri_noi = sum([val[1] for val in valori])
+    inci = round(average([val[2] for val in valori]), 2)
+
+    lista_cu_randuri_finale.append(
+        {
+            "Judet": jud,
+            "Număr de cazuri confirmate(total) pe 7 zile": cazuri_confirmate,
+            "Număr de cazuri nou confirmate pe 7 zile": cazuri_noi,
+            "Incidența  înregistrată la 14 zile pe ultimele 7 zile": inci,
+        }
+    )
+df = pd.DataFrame(lista_cu_randuri_finale)
+df = df.set_index(["Judet"])
+df.to_csv('Covid.csv')          # cazuti totale centralizate pe toate zilele
+print(df)
