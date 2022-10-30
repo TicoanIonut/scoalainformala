@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="18.07.2022">
+    <list default="true" id="1d230110-7a14-4b11-b0ab-a3cc0ba02544" name="Changes" comment="18.08.2022">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_work/selenium3.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_work/selenium3.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tema27.02.22/categorii.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tema27.02.22/categorii.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tema27.02.22/task.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tema27.02.22/task.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/teme_curs_09/datas.py" beforeDir="false" afterPath="$PROJECT_DIR$/teme_curs_09/datas.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="exceleditor.install" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/selenium_work/bot1" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -59,14 +60,15 @@
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\complyadvantage" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\test" />
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\freecodecamp" />
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala" />
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\nume_proiect" />
       <recent name="C:\Users\2dor\PycharmProjects\scoalainformala\curs08" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.datas">
-    <configuration name="1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.tema1">
+    <configuration name="BNR_ALL_DATA" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -74,11 +76,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/curs09" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work/1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/curs09/BNR_ALL_DATA.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -87,7 +89,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="calculator.pyw" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -95,11 +97,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/work" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tkinterrr" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/work/3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tkinterrr/calculator.pyw" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -129,7 +131,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="scraping" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,11 +139,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_work/bot1" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/teme_curs_09" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selenium_work/bot1/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/teme_curs_09/scraping.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -150,7 +152,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="selenium3" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="tema1" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="scoalainformala" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -158,11 +160,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/selenium_work" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tema27.02.22" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/selenium_work/selenium3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tema27.02.22/tema1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -173,11 +175,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.tema1" />
+        <item itemvalue="Python.scraping" />
+        <item itemvalue="Python.calculator.pyw" />
+        <item itemvalue="Python.BNR_ALL_DATA" />
         <item itemvalue="Python.datas" />
-        <item itemvalue="Python.1" />
-        <item itemvalue="Python.3" />
-        <item itemvalue="Python.selenium3" />
-        <item itemvalue="Python.main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -407,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658170267281</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="18.08.2022">
+      <created>1660833095346</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1660833095346</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -443,7 +452,8 @@
     <MESSAGE value="04.06.2022" />
     <MESSAGE value="13.07.2022" />
     <MESSAGE value="18.07.2022" />
-    <option name="LAST_COMMIT_MESSAGE" value="18.07.2022" />
+    <MESSAGE value="18.08.2022" />
+    <option name="LAST_COMMIT_MESSAGE" value="18.08.2022" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
