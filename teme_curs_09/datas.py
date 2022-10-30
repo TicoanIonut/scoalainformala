@@ -58,15 +58,15 @@ print(ddd)
 dall = {}
 for d in [ddict, ddd]:
 	dall.update(d)
-# df = pd.DataFrame(dall)
-# # df = df.T
+df = pd.DataFrame(dall)
+# df = df.T
 # df.replace(r'[a-zA-Z]|[\s]', '', regex=True, inplace=True)
 # df.replace(':', 0, inplace=True)
 # df.apply(pd.to_numeric)
 # df = df.astype(float)
 # # df.loc['mean'] = df.mean(axis=0)                       # average all append
 # # df = df.T
-# print(df)
+print(df)
 # plt.scatter(df.AL.mean(), df.AT.mean())
 # plt.show()
 # df.plot.scatter(x='AL', y='AT')
