@@ -17,7 +17,7 @@
 lst = [1, 2, 45, 55, 66, 45, 2, 3, 4, 55, 66, 7, 8, 77, 66]
 z = max(lst, key=lst.count)
 print(z)
-s = lst.count(55)
+s = lst.count(z)
 print(s)
 
 
