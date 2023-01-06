@@ -122,7 +122,7 @@ def schimb_jucator():
 
 
 def pozitie_x():
-    pozitie = input('Selecteaza o pozitie de la 1 la 9')
+    pozitie = input('Selecteaza o pozitie de la 1 la 9\n\n\n')
     validare = False
     while not validare:
         while pozitie not in ['1', '2', '3', '4', '5', '6', '7', '8', '9']:
@@ -170,13 +170,12 @@ def pozitie_0():
 
 
 def replay():
-    if joc_in_derulare is True:
-        restart = input('Vrei sa mai joci? y/n')
-        if restart == 'y':
-            joc()
-        else:
-            print('Multumim pentru joc!')
-            quit()
+    restart = input('Vrei sa mai joci? y/n')
+    if restart == 'y':
+        joc()
+    else:
+        print('Multumim pentru joc!')
+        quit()
 
 
 joc()

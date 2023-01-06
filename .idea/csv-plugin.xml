@@ -38,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\fcc_oop\items.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\solo_learn\ca-covid.csv">
           <value>
             <Attribute>

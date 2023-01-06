@@ -1,0 +1,38 @@
+<html>
+<head>
+    {% block title %}
+    {% endblock %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <nav>
+                <a class="btn" href="/admin/">Admin</a>
+                {% if request.user.is_authenticated %}
+                <a class="btn" href="{% url 'userprofile:utilizator_nou' %}">Adaugare utilizator</a>
+                <br>
+                <a class="btn" href="{% url 'locations:lista_locatii' %}">Locatii active</a>
+                <a class="btn" href="{% url 'locations:locatii_inactive' %}">Locatii inactive</a>
+                <a class="btn" href="{% url 'locations:locatii_toate' %}">Locatii toate</a>
+                <a class="btn" href="{% url 'companies:listare' %}">Companii active</a>
+                <a class="btn" href="{% url 'companies:companies_inactive' %}">Companii inactive</a>
+                <a class="btn" href="{% url 'companies:companies_toate' %}">Companii toate</a>
+                <a class="btn btn-primary" href="{% url 'logout' %}">Logout</a>
+                    {% if ready_to_work is False %}
+                        <a href="{% url 'userprofile:stop_pontaj' %}" class="btn btn-danger">Oprire pontaj</a>
+                    {% else %}
+                        <a href="{% url 'userprofile:start_pontaj' %}" class="btn btn-success">Pornire pontaj</a>
+                    {% endif %}
+                <span>Hi, {{ request.user.username|upper }}</span>
+                {% endif %}
+            </nav>
+        </div>
+    </div>
+</div>
+<br>
+{% block content %}
+{% endblock %}
+</body>
+</html>
